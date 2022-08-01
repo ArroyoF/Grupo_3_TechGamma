@@ -9,10 +9,13 @@ Permitirá ver una tabla comparativa entre 2 o 3 equipos de precios similares, c
 Público objetivo: esta página apunta a cualquier persona que quiera adquirir un teléfono aunque no esté seguro del modelo que necesita. 
 Las características especificadas permitirá al cliente elegir el modelo que prefiera.
 
-Sitios referencia: wwww.mercadolibre.com - www.naldo.com.ar - www.samsung.com.ar - www.claro.com.ar - www.amazon.com
+Sitios referencia: www.mercadolibre.com - www.naldo.com.ar - www.samsung.com.ar - www.claro.com.ar - www.amazon.com
 
 Integrantes del equipo:
 - Florencia Arroyo:
-- Fernanda Gallardo:
+
+- Fernanda Gallardo: Ing Químico / Alimentos, 22 años, Ciudad de México
+
 - Facundo Neselis:
+
 - Luis Tek: ingeniero electrónico, 43 años, provincia de Tucumán.
