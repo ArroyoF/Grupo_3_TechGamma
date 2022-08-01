@@ -12,7 +12,7 @@ Las características especificadas permitirá al cliente elegir el modelo que pr
 Sitios referencia: www.mercadolibre.com - www.naldo.com.ar - www.samsung.com.ar - www.claro.com.ar - www.amazon.com
 
 Integrantes del equipo:
-- Florencia Arroyo:
+- Florencia Arroyo: Arquitecta, Diseñadora , 28 años, Buenos Aires
 
 - Fernanda Gallardo: Ing Químico / Alimentos, 22 años, Ciudad de México
 
