@@ -16,6 +16,6 @@ Integrantes del equipo:
 
 - Fernanda Gallardo: Ing Químico / Alimentos, 22 años, Ciudad de México
 
-- Facundo Neselis:
+- Facundo Neselis: Estudiante, 18 años, Buenos Aires, Argentina.
 
 - Luis Tek: ingeniero electrónico, 43 años, provincia de Tucumán.
