@@ -22,3 +22,7 @@ Integrantes del equipo:
 - Facundo Neselis: Estudiante, 18 años, Buenos Aires, Argentina.
 
 - Luis Tek: ingeniero electrónico, 43 años, provincia de Tucumán.
+
+LINKS DE TRABAJO:
+TRELLO: https://trello.com/b/HU6iVnvk/proyecto-integrador-eq3
+FIGMA: https://www.figma.com/team_invite/redeem/CWEUKwjQIbSkGZ4ThefCdS
