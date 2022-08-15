@@ -1,4 +1,4 @@
-# Grupo_3_TechGamma
+# Grupo_3_Green
 
 Proyecto integrador: Marketplace de plantas.
 El proyecto venderá entre 5 y 10 tipos de plantas de indoor y outdoor.
@@ -11,8 +11,8 @@ Sitios referencia:
 -www.patchplants.com
 -www.behance.net/gallery/140736255/Alchemlife-Website?tracking_source=search_projects%7Cplant%20website
 -www.behance.net/gallery/95634047/Floreme-Website-Design?tracking_source=search_projects%7Cplant%20website
--https://www.ecosia.org/
--
+-https://www.ecosia.org
+-https://www.biotiendaplantas.com.ar
 
 Integrantes del equipo:
 - Florencia Arroyo: Arquitecta, Diseñadora , 28 años, Buenos Aires
