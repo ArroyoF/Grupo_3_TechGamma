@@ -73,12 +73,17 @@ h3,
 }
 
 .description{
-    display: none;
     margin-top: 20px;
 }
 
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
 section.banner img{
-    width: 100%;
+    width: 80%;
+    max-width: 800px;
 }
 
 main{
@@ -211,19 +216,34 @@ main section article{
         display: flex;
     }
 
-    .ingreso-datos {
+    .ingreso-usuario, .ingreso-clave, .ingreso-nombre, .ingreso-correo {
         display: flex;
-        width: 50%;
+        width: 80%;
+        max-width: 800px;
         flex-wrap: wrap;
         align-items: center;
         align-content: space-around;
-        padding: 100px;
         margin: auto;
+        ;
         
     }
 
+    .titulo-ingreso-datos{
+        display: flex;
+        justify-content:flex-start;
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px 10px;
+    }
+
     .ingreso-datos h3{
-        padding:20px 0px;
+        padding:20px 0px;;
+    }
+
+    .ingreso-datos .form {
+        width: 50%;
+        padding: 20px;
     }
 
     .form .input{
@@ -236,14 +256,33 @@ main section article{
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        width: 500px;
-        margin: auto;
+        width: 300px;
+        position: relative;
+        left: 50%;
         height: 50px;
     }
 
+
+    .botones-ingresar-nuevo, .botones-registrar-cancelar {
+        display: flex;
+        width: 80%;
+        max-width: 800px;
+        margin:auto;
+        padding: 20px;
+    }
 
     button {
         padding: 20px;
         width: 40%;
         margin: auto;
+    }
+
+    .boton-ingresar, .boton-registrar {
+        background-color:  rgb(171, 25, 25);
+        color: white;
+    }
+
+    .boton-nuevo, .boton-cancelar {
+        background-color: grey;
+        color: white;
     }
