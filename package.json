@@ -1,6 +1,25 @@
 {
+  "name": "html_css",
+  "version": "1.0.0",
+  "description": "Proyecto integrador: Marketplace de plantas. El proyecto venderá entre 5 y 10 tipos de plantas de indoor y outdoor. Se especificarán las características de cada tipo de planta. Incluirá imágenes en vista 360º y precios de cada planta.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
+    "express": "^4.17.1",
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArroyoF/Grupo_3_TechGamma.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ArroyoF/Grupo_3_TechGamma/issues"
+  },
+  "homepage": "https://github.com/ArroyoF/Grupo_3_TechGamma#readme"
 }
