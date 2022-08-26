@@ -22,8 +22,8 @@
                         <li><a href="#">Contactos</a></li>
                     </ul>
                     <ul class="menu-2">
-                        <li><a href="/login.html"> <i class="fas fa-sign-in-alt"></i></a></li>
-                        <li><a href="#"> <i class="fas fa-shopping-basket"></i></a></li>
+                        <li><a href="/login"> <i class="fas fa-sign-in-alt"></i></a></li>
+                        <li><a href="/register"><i class="fas fa-id-card"></i></a></li>
                         
                     </ul>
                 </nav>
@@ -34,53 +34,27 @@
         </section>
         <main>
         
-        <div class="titulo-ingreso-datos">
-            <h2 > Ingresa tus datos:</h2>
-        </div>
-            
-        <div class="ingreso-datos">
-            
-            <div class="ingreso-usuario">
-                <h3> Usuario</h3>
-                <div class="form" action="#" method="GET">
-                    <div class="input">Usuario</div>
+            <div class="titulo-ingreso-datos">
+                <h2 > Ingresa tus datos:</h2>
+            </div>
+                
+            <form class="ingreso-datos" action="/" method="POST">
+
+                <div><input type="text" name="user" placeholder="Nombre de usuario"></div> 
+                <div><input type="password" name="pass" placeholder="Elegí tu contraseña"></div> 
+                <div class="botones">
+                    <div><input class="boton_enviar" type="submit" value="Enviar"></div>
+                    <div><input class="boton_reset" type="reset" value="Borrar"></div>
                 </div>
-            </div>
-
-            <div class="ingreso-clave">
-                <h3> Clave</h3>
-                <div class="form" action="#" method="GET">
-                    <div class="input">Clave</div>
-                </div>
-            </div>
-
-            <div class="botones-ingresar-nuevo">
-                <button class="boton-ingresar" name="Ingresar">Ingresar</button>
-                <button class="boton-nuevo" name="Nuevo usuario"><a href=/register>Nuevo usuario</a></button>
-            </div>
-
-        </div>
+            
+            </form>
             
         </main>
 
         <footer>
-
-                <div class="logo"> 
-                    <img src="images/logo.png" alt="Logo de MercadoLiebre">
-                </div>     
-                <nav class="menu-nav">
-                    <ul class="menu-1">
-                        <li><a href="#">Plantas</a></li>
-                        <li><a href="#">Macetas</a></li>
-                        <li><a href="#">Contactos</a></li>
-                    </ul>
-                    <ul class="menu-2">
-                        <li><a href=/login> <i class="fas fa-sign-in-alt"></i></a></li>
-                        <li><a href="#"> <i class="fas fa-shopping-basket"></i></a></li>
-                        
-                    </ul>
-                </nav>
-            
+            <p>Trabaja con nosotros</p>
+            <p>Términos y condiciones</p>
+            <p>Ayuda</p>
         </footer>
         
     </body>

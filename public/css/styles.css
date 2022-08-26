@@ -55,6 +55,12 @@ footer ul li a,
 header ul li a{
     text-decoration: none;
     color: rgba(245, 245, 245, 0.773);
+    transition: all 0.5s;
+}
+
+header ul li a:hover {
+    color: black;
+    font-size:20px;
 }
 
 .price{
@@ -175,10 +181,6 @@ main section article{
 
 
 
-    .products article {
-        width: 22%;
-    }
-
     .menu-nav {
         width: 70%;
         display: flex;
@@ -190,7 +192,7 @@ main section article{
         color: white;
         display: flex;
         justify-content: space-between;
-        width: 40%;
+        width: 60%;
         align-items: center;
     }
 
@@ -207,82 +209,94 @@ main section article{
     width: 30px;
     height: 30px;
     border: 1px solid #39b54a;
-    background-color: rgb(171, 25, 25);
+    background-color: rgb(199, 130, 130);
     border-radius: 50%;
+    color: whitesmoke;
+    transition: all 0.5s;
     }
 
-
-    footer {
-        display: flex;
+    .menu-2 i:hover {
+        transform: scale(1.5);
+        background-color: red;
+        color: #46914e;
     }
 
-    .ingreso-usuario, .ingreso-clave, .ingreso-nombre, .ingreso-correo {
-        display: flex;
-        width: 80%;
-        max-width: 800px;
-        flex-wrap: wrap;
-        align-items: center;
-        align-content: space-around;
+    .ingreso-datos {
+        width: 70%;
         margin: auto;
-        ;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .ingreso-datos div {
+        width: 100%;
+        display: flex;
+    }
+
+    .ingreso-datos div input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
         
     }
 
-    .titulo-ingreso-datos{
+    .botones {
         display: flex;
-        justify-content:flex-start;
-        width: 80%;
-        max-width: 800px;
-        margin: auto;
-        padding: 20px 10px;
     }
 
-    .ingreso-datos h3{
-        padding:20px 0px;;
+    .boton_enviar, .boton_reset {
+        transition: all 0.5s;
+        width: 30px;;
     }
 
-    .ingreso-datos .form {
-        width: 50%;
-        padding: 20px;
-    }
-
-    .form .input{
-        font-size: 13px;
-        background-color: #FFF;
-        border: 1px solid #000;
-        outline: none;
-        color: #666;
-        padding: 2px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        width: 300px;
-        position: relative;
-        left: 50%;
-        height: 50px;
+    .boton_enviar:hover {
+        background-color: #46914e;
+        color: white;
     }
 
 
-    .botones-ingresar-nuevo, .botones-registrar-cancelar {
+    .boton_reset:hover {
+        background-color: red;
+        color: white;
+    }
+
+    footer {
         display: flex;
-        width: 80%;
-        max-width: 800px;
-        margin:auto;
-        padding: 20px;
+        justify-content: space-around;
     }
 
-    button {
-        padding: 20px;
+    footer p {
+        color:rgba(245, 245, 245, 0.773);
+        size: 15px;
+        margin: 10px;
+    }
+
+    .menu-1 {
+        visibility: hidden;
+    }
+
+
+@media (min-width:470px) {
+
+    .products article {
         width: 40%;
-        margin: auto;
     }
 
-    .boton-ingresar, .boton-registrar {
-        background-color:  rgb(171, 25, 25);
-        color: white;
+    .menu-1 {
+        visibility: visible;
     }
 
-    .boton-nuevo, .boton-cancelar {
-        background-color: grey;
-        color: white;
+}
+
+
+@media (min-width:770px) {
+
+    .products article {
+        width: 20%;
     }
+
+    .menu-1 {
+        width: 40%;
+    }
+
+}
