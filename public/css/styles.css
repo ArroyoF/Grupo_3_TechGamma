@@ -182,7 +182,7 @@ main section article{
 
 
     .menu-nav {
-        width: 70%;
+        width: 20%;
         display: flex;
         justify-content: space-between;
         padding: 10px;
@@ -276,14 +276,42 @@ main section article{
     }
 
 
+    .burger-menu{
+        text-align: center;
+    }
+    
+    .burger-menu i{
+        background-color: #0044AA;
+        border-radius: 5px;
+        width: 70%;
+        color: #FFF;
+        font-size: 15px;
+        height: 35px;
+        margin: 10px 0px 20px 0px;
+        padding: 10px;
+        width: 40px;
+    }
+
+
+
 @media (min-width:470px) {
 
     .products article {
         width: 40%;
     }
+    
+
+    .menu-nav {
+        width: 70%;
+    }
 
     .menu-1 {
         visibility: visible;
+    }
+
+    .burger-menu {
+        display: none;
+        border: red dotted;
     }
 
 }
