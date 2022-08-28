@@ -52,7 +52,7 @@ header ul li{
 }
 
 footer ul li a, 
-header ul li a{
+header ul li a, header p{
     text-decoration: none;
     color: rgba(245, 245, 245, 0.773);
     transition: all 0.5s;
@@ -200,6 +200,7 @@ main section article{
         display: flex;
         width: 100%;
         justify-content: space-around;
+        align-items: center;
         
     }
 
@@ -305,6 +306,10 @@ main section article{
         width: 40px;
     }
 
+    header p {
+        display: none;
+    }
+
 
 
 @media (min-width:470px) {
@@ -342,6 +347,10 @@ main section article{
 
     .menu-1 {
         width: 40%;
+    }
+
+    header p {
+        display: inline;
     }
 
 }
