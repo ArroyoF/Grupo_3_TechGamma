@@ -268,14 +268,12 @@ main section article{
 
     .boton_enviar, .boton_reset {
         transition: all 0.5s;
-        width: 30px;
-        height: 20px;
+        width: 20px;
     }
 
     .boton_enviar:hover {
         background-color: #004b45;
         color: white;
-        height: 20px;
 
     }
 
