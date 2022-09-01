@@ -293,6 +293,7 @@ main section article{
         color:rgba(245, 245, 245, 0.773);
         size: 15px;
         margin: 10px;
+        font-size: 10px;
     }
 
     .menu-1 {
@@ -337,7 +338,7 @@ main section article{
     }
 
     .menu-1 {
-        visibility: visible;
+        display: flex;
     }
 
     .menu-2 {
