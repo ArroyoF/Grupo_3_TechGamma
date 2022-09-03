@@ -324,6 +324,45 @@ main section article{
         display: none;
     }
 
+    main form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    
+    main button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 24px;
+    }
+
+    .nombre-precio {
+        display: flex;
+        flex-direction: column;
+        font-size: 24px;
+    }
+
+    .precio-planta {
+        display: flex;
+        font-size: 18px;
+    }
+    
+    .cantidad {
+        display: flex;
+        width: 50%;
+    }
+
+    .total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 
 
 @media (min-width:470px) {
