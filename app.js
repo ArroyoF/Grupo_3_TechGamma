@@ -21,6 +21,10 @@ app.get('/productCart', function(req, res) {
     res.sendFile(path.join(__dirname, '/views/productCart.html'))
 })
 
+app.get('/productDetail', function(req, res) {
+    res.sendFile(path.join(__dirname, '/views/productDetail.html'))
+})
+
 app.post('/', (req,res)=>{
     res.sendFile(path.join(__dirname, '/views/index.html'))
 });
