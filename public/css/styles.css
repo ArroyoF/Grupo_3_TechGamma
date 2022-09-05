@@ -322,9 +322,37 @@ main section .products article{
         color: white;
     }
 
-    .noticias {
+    .articulos {
+        padding: 10px;
+    }
+
+
+    .comunidad {
+        background-color: #68a99a;
+        color: #004b45;
+        font-size: 36px;
+        font-style: normal;
+        height: 500px;
         display: flex;
+        justify-content: center;
+        line-height: 500px;
+    }
+
+    .noticias {
         margin: 10px;
+    }
+
+    .texto_web {
+        font-size: 13px;
+        font-style: normal;
+        padding: 20px;
+        display: none;
+    }
+
+    .texto_mobile {
+        font-size: 13px;
+        font-style: normal;
+        padding: 20px;
     }
 
 
@@ -436,7 +464,17 @@ main section .products article{
 }
 
 
-@media (min-width:770px) {
+@media (min-width:750px) {
+
+    .contenedor img {
+        object-fit: fill;
+        max-width: 700px;
+    }
+
+    .presentacion{
+        font-size: 14px;
+        width: 35%;
+    }
 
     .products article {
         width: 20%;
@@ -448,6 +486,41 @@ main section .products article{
 
     header p {
         display: inline;
+    }
+
+    .noticias {
+        display: flex;
+    }
+
+    .texto {
+        width: 50%;
+        position: relative;
+        display: inline-block;
+        text-align: justify;
+    }
+
+    .comunidad {
+        width: 100%;
+        max-height: 500px;
+        line-height: 300px;
+    }
+
+    .articulos img {
+        width: 50%;
+        object-fit: fill;
+        height: 500px;
+    }
+
+    .texto_mobile{
+        display: none;
+    }
+
+    .texto_web {
+        display: inline;
+        position: absolute;
+        top: 250px;
+        width: 100%;
+        left: 10px;
     }
 
 }
