@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main form {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    border: 1px solid red;
+}
+
+main form div img {
+    display: flex;
+    width: 40%;
+    border: 1px solid red;
+}
+
+.nombre-precio-planta {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 1px solid black;
+}
+
+main form button {
+    display: flex;
+    width: 150px;
+}
