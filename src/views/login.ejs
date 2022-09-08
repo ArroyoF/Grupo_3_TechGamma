@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.ejs') %>
+    <body>
+
+        <%- include('./partials/header.ejs') %>
+
+        <section class="banner">
+            <img src="images/banner.png" alt="Banner de ofertas">
+        </section>
+        <main>
+        
+            <div class="titulo-ingreso-datos">
+                <h2 > Ingresa tus datos:</h2>
+            </div>
+                
+            <form class="ingreso-datos" action="/login" method="POST">
+
+                <div><input type="text" name="user" placeholder="Nombre de usuario"></div> 
+                <div><input type="password" name="pass" placeholder="Elegí tu contraseña"></div> 
+                <div class="botones">
+                    <div><input class="boton_enviar" type="submit" value="Enviar"></div>
+                    <div><input class="boton_reset" type="reset" value="Borrar"></div>
+                </div>
+            
+            </form>
+            
+        </main>
+
+        <%- include('partials/footer.ejs') %>
+        
+    </body>
+</html>

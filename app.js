@@ -1,33 +1,18 @@
 const express = require('express')
-const path = require('path')
 const app = express()
+const path = require('path')
+app.use(express.static(path.join(__dirname,'public')))
+const rutas = require('./src/routes/rutas.js');
+
+
 var puerto=3030;
 
-app.use(express.static(path.join(__dirname,'public')))
+app.set('view engine', 'ejs');                      //inicializa ejs
+app.use(express.urlencoded({ extended: false }));   //permite capturar datos enviados por el formulario con req.body
+app.use(express.json());                            //permite capturar datos enviados por el formulario en req.body
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '/views/index.html'))
-})
 
-app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname, '/views/login.html'))
-})
-
-app.get('/register', function(req, res) {
-    res.sendFile(path.join(__dirname, '/views/register.html'))
-})
-
-app.get('/productCart', function(req, res) {
-    res.sendFile(path.join(__dirname, '/views/productCart.html'))
-})
-
-app.get('/productDetail', function(req, res) {
-    res.sendFile(path.join(__dirname, '/views/productDetail.html'))
-})
-
-app.post('/', (req,res)=>{
-    res.sendFile(path.join(__dirname, '/views/index.html'))
-});
+app.use('/',rutas);                                 // define ruteo
 
 
 app.listen(puerto, ()=>{
