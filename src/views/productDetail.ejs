@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head.ejs') %>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bienvenidos</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/productDetail.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    </head>
+    
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
     <form action="" method="post">
         <div class="imagen-planta">
-            <img src="/images/monstera.jpg" alt="">
+            <img src="<%= planta.imagen %>" alt="">
         </div>
         <div class="nombre-precio-planta">
-            <h3>Producto 1</h3>
+            <h3><%= planta.nombre %></h3>
             <br>
-            <h4>Precio</h4>
+            <h4><%= planta.precio %></h4>
             <br>
-            <p>Descripcion del producto. Tamaños disponibles, aplicaciones, cuidados, etc.</p>
+            <p><%= planta.descripcion %></p>
             <br>
             <button>Agregar al carrito</button>
         </div> 

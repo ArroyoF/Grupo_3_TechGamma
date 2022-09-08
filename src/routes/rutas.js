@@ -6,7 +6,7 @@ router.get('/', controladores.index);                               // usa contr
 router.get('/login', controladores.login);                          // usa controlador.login al entrar a /login
 router.get('/register', controladores.register);
 router.get('/productCart', controladores.productCart);
-router.get('/productDetail', controladores.productDetail);
+router.get('/productDetail/:id', controladores.productDetail);
 
 router.post('/login', controladores.entrar);
 router.post('/register', controladores.crear);

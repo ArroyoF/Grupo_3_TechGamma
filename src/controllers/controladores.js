@@ -1,5 +1,34 @@
 const path = require('path');                                           // habilita path
 
+
+let plantas = [
+    {
+        id: 1,
+        nombre: 'Planta 1',
+        precio: 'Precio 1',
+        descripcion: 'Descripción 1',
+        imagen: '/images/planta1.png'
+    },
+
+    {
+        id: 2,
+        nombre: 'Planta 2',
+        precio: 'Precio 2',
+        descripcion: 'Descripción 2',
+        imagen: '/images/planta2.png'
+    },
+
+    {
+        id: 3,
+        nombre: 'Planta 3',
+        precio: 'Precio 3',
+        descripcion: 'Descripción 3',
+        imagen: '/images/planta3.png'
+    },
+
+]
+
+
 let controladores = {
     
     index: function(req,res) {
@@ -19,7 +48,10 @@ let controladores = {
     },
 
     productDetail:  function(req,res) {
-        res.render(path.join(__dirname,'../views/ProductDetail.ejs'));
+        let plantaEncontrada = plantas.find(planta => {
+            return planta.id == req.params.id
+        })
+        res.render(path.join(__dirname,'../views/ProductDetail.ejs'), { planta : plantaEncontrada});
     },
 
     crear: function(req,res) {
