@@ -36,22 +36,22 @@ let controladores = {
     },
     
     login:  function(req,res) {
-        res.render(path.join(__dirname,'../views/login.ejs'));          // devuelve la página login.ejs al llamar a controlador.login
+        res.render(path.join(__dirname,'../views/users/login.ejs'));          // devuelve la página login.ejs al llamar a controlador.login
     },
     
     register:  function(req,res) {
-        res.render(path.join(__dirname,'../views/register.ejs'));
+        res.render(path.join(__dirname,'../views/users/register.ejs'));
     },
 
     productCart:  function(req,res) {
-        res.render(path.join(__dirname,'../views/productCart.ejs'));
+        res.render(path.join(__dirname,'../views/products/productCart.ejs'));
     },
 
     productDetail:  function(req,res) {
         let plantaEncontrada = plantas.find(planta => {
             return planta.id == req.params.id
         })
-        res.render(path.join(__dirname,'../views/ProductDetail.ejs'), { planta : plantaEncontrada});
+        res.render(path.join(__dirname,'../views/products/ProductDetail.ejs'), { planta : plantaEncontrada});
     },
 
     crear: function(req,res) {
