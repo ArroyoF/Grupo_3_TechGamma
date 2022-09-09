@@ -4,26 +4,26 @@ const path = require('path');                                           // habil
 let plantas = [
     {
         id: 1,
-        nombre: 'Planta 1',
-        precio: 'Precio 1',
-        descripcion: 'Descripción 1',
-        imagen: '/images/planta1.png'
+        nombre: 'Maceta Circulos Tamaño M',
+        precio: '$4.990',
+        descuento: '10% off',
+        imagen: '/images/circulo2.jpeg'
     },
 
     {
         id: 2,
-        nombre: 'Planta 2',
-        precio: 'Precio 2',
-        descripcion: 'Descripción 2',
-        imagen: '/images/planta2.png'
+        nombre: 'Planta Potus 20cm',
+        precio: '$1.990',
+        descuento: '',
+        imagen: '/images/potus.jpeg'
     },
 
     {
         id: 3,
-        nombre: 'Planta 3',
-        precio: 'Precio 3',
-        descripcion: 'Descripción 3',
-        imagen: '/images/planta3.png'
+        nombre: 'Planta Monstera 30cm',
+        precio: '$3.250',
+        descuento: '5% off',
+        imagen: '/images/monstera.jpg'
     },
 
 ]
@@ -32,7 +32,7 @@ let plantas = [
 let controladores = {
     
     index: function(req,res) {
-        res.render(path.join(__dirname,'../views/index.ejs'));          // devuelve la página index.ejs al llamar a controlador.index
+        res.render(path.join(__dirname,'../views/index.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
     },
     
     login:  function(req,res) {
