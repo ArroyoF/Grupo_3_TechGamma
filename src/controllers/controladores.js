@@ -54,6 +54,10 @@ let controladores = {
         res.render(path.join(__dirname,'../views/products/ProductDetail.ejs'), { planta : plantaEncontrada});
     },
 
+    productCreate:  function(req,res) {
+        res.render(path.join(__dirname,'../views/products/productCreate.ejs'));
+    },
+
     crear: function(req,res) {
         let datos_crear=req.body;                                       // carga los datos del formulario en datos_crear desde req.body
         //res.send(datos_crear);                                        // muestra los datos del formulario en el navegador
@@ -76,6 +80,13 @@ let controladores = {
         let datos_entrar=req.body;
         //res.send(datos_entrar);
         res.redirect('/productCart');
+    },
+
+    
+    create: function(req,res) {
+        let datos_entrar=req.body;
+        //res.send(datos_entrar);
+        res.redirect('/');
     },
 };
  

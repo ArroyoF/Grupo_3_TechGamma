@@ -7,11 +7,13 @@ router.get('/login', controladores.login);                          // usa contr
 router.get('/register', controladores.register);
 router.get('/productCart', controladores.productCart);
 router.get('/productDetail/:id', controladores.productDetail);
+router.get('/productCreate', controladores.productCreate);
 
 router.post('/login', controladores.entrar);
 router.post('/register', controladores.crear);
 router.post('/productCart', controladores.cart);
 router.post('/productDetail', controladores.detail);
+router.post('/productCreate', controladores.create);
 
 module.exports = router;                                            // exporta ruteador
 

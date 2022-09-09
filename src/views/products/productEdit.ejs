@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head.ejs') %>
+    <body>
+        <%- include('../partials/header.ejs') %>
+        
+        <%- include('../partials/banner.ejs') %>
+        
+        <div class="titulo-ingreso-datos">
+            <h2 > Registra los datos del nuevo producto:</h2>
+        </div>
+            
+        <form class="ingreso-datos" action="/productCreate" method="POST">
+            <div><input type="text" name="nombre" placeholder="Nombre del producto"></div> 
+            <div><input type="text" name="descripcion" placeholder="Descripcion"></div> 
+            <div><input type="text" name="imagen" placeholder="Imagen"></div> 
+            <div><input type="text" name="categoria" placeholder="Categoría"></div> 
+            <div><input type="text" name="color" placeholder="Color"></div> 
+            <div><input type="text" name="precio" placeholder="Precio"></div> 
+            <div class="botones">
+                <div><input class="boton_enviar" type="submit" value="Enviar"></div>
+                <div><input class="boton_reset" type="reset" value="Borrar"></div>
+            </div>
+        
+        </form>
+        
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+        
+    </body>
+</html>
