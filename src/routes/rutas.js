@@ -10,6 +10,8 @@ router.get('/productDetail/:id', controladores.productDetail);
 
 router.post('/login', controladores.entrar);
 router.post('/register', controladores.crear);
+router.post('/productCart', controladores.cart);
+router.post('/productDetail', controladores.detail);
 
 module.exports = router;                                            // exporta ruteador
 

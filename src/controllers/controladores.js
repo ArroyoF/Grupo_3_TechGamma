@@ -65,6 +65,18 @@ let controladores = {
         //res.send(datos_entrar);
         res.redirect('/');
     },
+
+    cart: function(req,res) {
+        let datos_entrar=req.body;
+        //res.send(datos_entrar);
+        res.redirect('/');
+    },
+
+    detail: function(req,res) {
+        let datos_entrar=req.body;
+        //res.send(datos_entrar);
+        res.redirect('/productCart');
+    },
 };
  
 module.exports = controladores;

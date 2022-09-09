@@ -2,27 +2,27 @@
 <html lang="en">
     <%- include('partials/head.ejs') %>
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('partials/header.ejs') %>
     <main>
-        <form action="" method="post">
-        <div class="carrito">
-            <h3>Carrito de compras</h3>
-            <img src="/images/planta1.png" alt="">
-        </div>
-        <div class="nombre-precio">
-            <p class="nombre-planta">Planta1</p>
-            <h4 class="precio-planta">$2.000</h4>
-        </div>
-        <div class="cantidad">
-            <input type="number" name="cantidad">
-        </div>
-        <div class="total">
-            <p>Total: X</p>
-        </div>
-        <br>
-        <button>Comprar</button>
-        <button>Ver mas productos</button> 
-    </form>
+        <form action="/productCart" method="post">
+            <div class="carrito">
+                <h3>Carrito de compras</h3>
+                <img src="/images/planta1.png" alt="">
+            </div>
+            <div class="nombre-precio">
+                <p class="nombre-planta">Planta1</p>
+                <h4 class="precio-planta">$2.000</h4>
+            </div>
+            <div class="cantidad">
+                <input type="number" name="cantidad">
+            </div>
+            <div class="total">
+                <p>Total: X</p>
+            </div>
+            <br>
+            <button>Comprar</button>
+            <button>Ver mas productos</button> 
+        </form>
     </main>
     <%- include('partials/footer.ejs') %>
 </body>

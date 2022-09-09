@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Bienvenidos</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/productDetail.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    </head>
-    
+    <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
-    <form action="" method="post">
+    <form action="/productDetail" method="post">
         <div class="imagen-planta">
             <img src="<%= planta.imagen %>" alt="">
         </div>
@@ -29,6 +19,6 @@
         </div> 
     </form>
     </main>
-    <%- include('partials/footer.ejs') %>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
