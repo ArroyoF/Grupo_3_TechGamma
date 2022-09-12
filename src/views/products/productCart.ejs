@@ -7,11 +7,11 @@
         <form action="/productCart" method="post">
             <div class="carrito">
                 <h3>Carrito de compras</h3>
-                <img src="/images/planta1.png" alt="">
+                <img src=<%= carrito[0].imagen %> alt="">
             </div>
             <div class="nombre-precio">
-                <p class="nombre-planta">Planta1</p>
-                <h4 class="precio-planta">$2.000</h4>
+                <p class="nombre-planta"> <%= carrito[0].nombre %> </p>
+                <h4 class="precio-planta"> <%= carrito[0].precio %> </h4>
             </div>
             <div class="cantidad">
                 <input type="number" name="cantidad">

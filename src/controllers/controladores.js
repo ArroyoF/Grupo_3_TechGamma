@@ -28,6 +28,16 @@ let plantas = [
 
 ]
 
+let carritos = [
+    {
+        id: 1,
+        nombre: 'Maceta Circulos Tamaño M',
+        precio: '$4.990',
+        descuento: '10% off',
+        imagen: '/images/circulo2.jpeg'
+    },
+]
+
 
 let controladores = {
     
@@ -44,7 +54,7 @@ let controladores = {
     },
 
     productCart:  function(req,res) {
-        res.render(path.join(__dirname,'../views/products/productCart.ejs'));
+        res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:carritos});
     },
 
     productDetail:  function(req,res) {
@@ -87,6 +97,10 @@ let controladores = {
         let datos_entrar=req.body;
         //res.send(datos_entrar);
         res.redirect('/');
+    },
+
+    edit: function(req,res){
+        res.render(path.join(__dirname,'../views/products/productEdit.ejs'));
     },
 };
  
