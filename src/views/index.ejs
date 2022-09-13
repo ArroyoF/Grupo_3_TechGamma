@@ -9,20 +9,7 @@
 
         <main>
             
-            <section class="nombre">
-                <div class="contenedor">
-                    <img src="images/ppal.jpg" alt="planta1" class="product_img">
-                    <div class="imagen_nombre">
-                        <img src="images/nombre.png" alt="img_nombre">
-                    </div> 
-                    <div class="presentacion">    
-                        <p>
-                            Somos un sitio web dedicado al cuidado de plantas de interior y exterior.
-                                Encontramos objetos unicos para cada persona, pensados en la naturaleza y la sensibilidad.
-                         </p>
-                    </div>
-                </div>
-            </section>
+            <%- include('./partials/banner.ejs') %>
             
             <section class="shop">
                 <h3>Productos - Shop</h3>
@@ -63,6 +50,17 @@
                                     <p class="discount"><%= planta[2].descuento %></p>
                                 </div>
                             <h4 class="description"><%= planta[2].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article>
+                        <a href="/productList">
+                            <img src="/images/masProductos.png" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <div class="precio-desc">
+                                </div>
+                            <h4 class="description">Ver más productos</h4>
                             </div>
                         </a>
                     </article>

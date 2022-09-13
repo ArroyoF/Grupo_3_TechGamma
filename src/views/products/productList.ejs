@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <%- include('../partials/header.ejs') %>
+
+        <main>
+            
+            <section class="nombre">
+                <div class="contenedor">
+                    <img src="images/ppal.jpg" alt="planta1" class="product_img">
+                    <div class="imagen_nombre">
+                        <img src="images/nombre.png" alt="img_nombre">
+                    </div> 
+                    <div class="presentacion">    
+                        <p>
+                            Somos un sitio web dedicado al cuidado de plantas de interior y exterior.
+                                Encontramos objetos unicos para cada persona, pensados en la naturaleza y la sensibilidad.
+                         </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="shop">
+                <h3>Productos - Shop</h3>
+                <div class="products">
+                    <article>
+                        <a href="/productDetail/1">
+                            <img src="<%= planta[0].imagen %>" alt="planta1" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[0].precio %></p>
+                                    <p class="discount"><%= planta[0].descuento %></p>
+                                </div>
+                                <h4 class="description"><%= planta[0].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="/productDetail/2">
+                            <img src="<%= planta[1].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[1].precio %></p>
+                                    <p class="discount"><%= planta[1].descuento %></p>
+                                </div>
+                                <h4 class="description"><%= planta[1].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="/productDetail/3">
+                            <img src="<%= planta[2].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[2].precio %></p>
+                                    <p class="discount"><%= planta[2].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[2].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+
+                    <article>
+                        <a href="/productDetail/4">
+                            <img src="<%= planta[3].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[3].precio %></p>
+                                    <p class="discount"><%= planta[3].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[3].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+
+                    <article>
+                        <a href="/productDetail/5">
+                            <img src="<%= planta[4].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[4].precio %></p>
+                                    <p class="discount"><%= planta[4].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[4].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+
+                    <article>
+                        <a href="/productDetail/6">
+                            <img src="<%= planta[5].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[5].precio %></p>
+                                    <p class="discount"><%= planta[5].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[5].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article>
+                        <a href="/productDetail/7">
+                            <img src="<%= planta[6].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[6].precio %></p>
+                                    <p class="discount"><%= planta[6].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[6].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+
+                    <article>
+                        <a href="/productDetail/8">
+                            <img src="<%= planta[7].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[7].precio %></p>
+                                    <p class="discount"><%= planta[7].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[3].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+
+                    <article>
+                        <a href="/productDetail/9">
+                            <img src="<%= planta[8].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[8].precio %></p>
+                                    <p class="discount"><%= planta[8].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[8].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+
+
+                    <article>
+                        <a href="/productDetail/10">
+                            <img src="<%= planta[9].imagen %>" alt="planta3" class="product_img">
+                            <div class="main-article">
+                                <i class="fas fa-shopping-bag"></i>
+                                <div class="precio-desc">
+                                    <p class="price"><%= planta[9].precio %></p>
+                                    <p class="discount"><%= planta[9].descuento %></p>
+                                </div>
+                            <h4 class="description"><%= planta[9].nombre %></h4>
+                            </div>
+                        </a>
+                    </article>
+                </div>  
+            </section>
+            
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+        
+    </body>
+</html>

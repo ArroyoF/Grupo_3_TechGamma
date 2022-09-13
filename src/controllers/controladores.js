@@ -26,6 +26,62 @@ let plantas = [
         imagen: '/images/monstera.jpg'
     },
 
+    {
+        id: 4,
+        nombre: 'Maceta Circulos Tamaño L',
+        precio: '$4.990',
+        descuento: '10% off',
+        imagen: '/images/circulo2.jpeg'
+    },
+
+    {
+        id: 5,
+        nombre: 'Planta Potus 50cm',
+        precio: '$1.990',
+        descuento: '',
+        imagen: '/images/potus.jpeg'
+    },
+
+    {
+        id: 6,
+        nombre: 'Planta Monstera 40cm',
+        precio: '$3.250',
+        descuento: '5% off',
+        imagen: '/images/monstera.jpg'
+    },
+
+    {
+        id: 7,
+        nombre: 'Planta Monstera 60cm',
+        precio: '$3.250',
+        descuento: '5% off',
+        imagen: '/images/monstera.jpg'
+    },
+
+    {
+        id: 8,
+        nombre: 'Maceta Circulos Tamaño XL',
+        precio: '$4.990',
+        descuento: '10% off',
+        imagen: '/images/circulo2.jpeg'
+    },
+
+    {
+        id: 9,
+        nombre: 'Planta Potus 80cm',
+        precio: '$1.990',
+        descuento: '',
+        imagen: '/images/potus.jpeg'
+    },
+
+    {
+        id: 10,
+        nombre: 'Planta Monstera 90cm',
+        precio: '$3.250',
+        descuento: '5% off',
+        imagen: '/images/monstera.jpg'
+    },
+
 ]
 
 let carritos = [
@@ -45,6 +101,10 @@ let controladores = {
         res.render(path.join(__dirname,'../views/index.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
     },
     
+    productList: function(req,res) {
+        res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+    },
+
     login:  function(req,res) {
         res.render(path.join(__dirname,'../views/users/login.ejs'));          // devuelve la página login.ejs al llamar a controlador.login
     },
@@ -61,7 +121,7 @@ let controladores = {
         let plantaEncontrada = plantas.find(planta => {
             return planta.id == req.params.id
         })
-        res.render('products/ProductDetail', { planta : plantaEncontrada});
+        res.render(path.join(__dirname,'../views/products/ProductDetail.ejs'), { planta : plantaEncontrada});
     },
 
     productCreate:  function(req,res) {

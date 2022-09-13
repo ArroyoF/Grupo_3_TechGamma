@@ -9,6 +9,8 @@ router.get('/productCart', controladores.productCart);
 router.get('/productDetail/:id', controladores.productDetail);
 router.get('/productCreate', controladores.productCreate);
 router.get('/productEdit', controladores.edit);
+router.get('/productList', controladores.productList);
+
 
 router.post('/login', controladores.entrar);
 router.post('/register', controladores.crear);
