@@ -61,7 +61,7 @@ let controladores = {
         let plantaEncontrada = plantas.find(planta => {
             return planta.id == req.params.id
         })
-        res.render(path.join(__dirname,'../views/products/ProductDetail.ejs'), { planta : plantaEncontrada});
+        res.render('products/ProductDetail', { planta : plantaEncontrada});
     },
 
     productCreate:  function(req,res) {
