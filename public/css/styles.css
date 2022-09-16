@@ -444,6 +444,10 @@ main section .products article{
         display: flex;
         font-size: 18px;
     }
+
+    .imagen-carrito {
+        width: 50%;
+    }
     
     .cantidad {
         display: flex;
