@@ -39,7 +39,7 @@ let plantas = [
         nombre: 'Planta Potus 50cm',
         precio: '$1.990',
         descuento: '',
-        imagen: '/images/potus.jpeg'
+        imagen: '/images/potus2.jpeg'
     },
 
     {
@@ -47,7 +47,7 @@ let plantas = [
         nombre: 'Planta Monstera 40cm',
         precio: '$3.250',
         descuento: '5% off',
-        imagen: '/images/monstera.jpg'
+        imagen: '/images/monstera2.jpeg'
     },
 
     {
@@ -63,7 +63,7 @@ let plantas = [
         nombre: 'Maceta Circulos Tamaño XL',
         precio: '$4.990',
         descuento: '10% off',
-        imagen: '/images/circulo2.jpeg'
+        imagen: '/images/circulo3.jpg'
     },
 
     {

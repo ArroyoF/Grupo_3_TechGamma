@@ -1,6 +1,8 @@
 const express = require('express')                                  // instala express
 const router = express.Router();                                    // habilita ruteo
-const controladores = require('../controllers/controladores')       // importa controladores
+const controladores = require('../controllers/controladores');       // importa controladores
+const multer = require('multer');                                    // requiere multer en nuestro router
+
 
 router.get('/', controladores.index);                               // usa controlador.index al entrar a home
 router.get('/login', controladores.login);                          // usa controlador.login al entrar a /login
