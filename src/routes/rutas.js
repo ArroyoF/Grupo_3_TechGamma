@@ -2,7 +2,18 @@ const express = require('express')                                  // instala e
 const router = express.Router();                                    // habilita ruteo
 const controladores = require('../controllers/controladores');       // importa controladores
 const multer = require('multer');                                    // requiere multer en nuestro router
+const path = require("path");
 
+const storage = multer.diskStorage({                                // configuración multer para guardar archivo imagen
+    destination: function (req, file, cb) { 
+       cb(null, path.join(__dirname, "../../public/img")); 
+       
+    }, 
+    filename: function (req, file, cb) { 
+       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);  } 
+  })
+
+const uploadFile = multer({ storage });
 
 router.get('/', controladores.index);                               // usa controlador.index al entrar a home
 router.get('/login', controladores.login);                          // usa controlador.login al entrar a /login
@@ -10,15 +21,17 @@ router.get('/register', controladores.register);
 router.get('/productCart', controladores.productCart);
 router.get('/productDetail/:id', controladores.productDetail);
 router.get('/productCreate', controladores.productCreate);
-router.get('/productEdit', controladores.edit);
+router.get('/productEdit/:id', controladores.productEdit);
 router.get('/productList', controladores.productList);
 
 
 router.post('/login', controladores.entrar);
-router.post('/register', controladores.crear);
-router.post('/productCart', controladores.cart);
-router.post('/productDetail', controladores.detail);
-router.post('/productCreate', controladores.create);
+router.post('/register', controladores.crearUsuario);
+router.post('/productCart', controladores.finalizarCompra);
+router.post('/productDetail', controladores.agregarCarrito);
+router.post('/productCreate', controladores.crearProducto);
+router.put('/productEdit/:id', controladores.actualizarProducto);
+router.delete('/productEdit/:id', controladores.borrarProducto);
 
 module.exports = router;                                            // exporta ruteador
 
