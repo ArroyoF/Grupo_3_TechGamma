@@ -4,31 +4,28 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-    <form action="/productDetail" method="post">
-        <div class="imagen-planta">
+    
+        <div class="detalle-planta">
             <img src="/images/<%= planta.imagen %>" alt="">
-        </div>
-        <div class="nombre-precio-planta">
             <h3><%= planta.nombre %></h3>
             <br>
             <h4><%= planta.precio %></h4>
             <br>
             <p><%= planta.descuento %></p>
             <br>
+        </div>
+    
+    <form action="/productDetail" method="post">
             <button>Agregar al carrito</button>
-        </div> 
     </form>
-
+    <br>
     <form action="/productEdit/<%= planta.id %>" method="get">
         <button>Editar</button>
     </form>
-
-
+    <br>
     <form action="/productEdit/<%= planta.id %>?_method=DELETE" method="post">
         <button>Eliminar</button>
     </form>
-
-    <br>
     <br>
     <br>
     <br>

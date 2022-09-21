@@ -10,12 +10,26 @@
         </div>
             
         <form class="ingreso-datos" action="/productEdit/<%= planta.id %>?_method=PUT" method="POST">
-            <div><input type="text" name="nombre" value="<%= planta.nombre %>"></div> 
-            <div><input type="text" name="descuento" value="<%= planta.descuento %>"></div> 
-            <div><input type="text" name="imagen" value="<%= planta.imagen %>"></div>
-            <div><input type="text" name="precio" value="<%= planta.precio %>"></div> 
+            <div>
+                <label nombre> Nombre </label>
+                <input type="text" name="nombre" value="<%= planta.nombre %>">
+            </div> 
+            <div>
+                <label descuento> Descuento </label>
+                <input type="text" name="descuento" value="<%= planta.descuento %>">
+            </div> 
+            <div>
+                <label imagen> Imagen </label>
+                <input type="text" name="imagen" value="<%= planta.imagen %>">
+            </div>
+            <div>
+                <label precio> Precio </label>
+                <input type="text" name="precio" value="<%= planta.precio %>">
+            </div> 
             <div class="botones">
-                <div><input class="boton_enviar" type="submit" value="Guardar"></div>
+                <div>
+                    <input class="boton_enviar" type="submit" value="Guardar">
+                </div>
             </div>
         
         </form>

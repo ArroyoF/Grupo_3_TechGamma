@@ -22,7 +22,7 @@
     },
     {
         "id": 4,
-        "nombre": "Maceta Circulos Tamaño L",
+        "nombre": "Maceta Círculos Tamaño L",
         "precio": "$4.990",
         "descuento": "10% off",
         "imagen": "circulo2.jpeg"
@@ -65,7 +65,7 @@
     {
         "id": 11,
         "nombre": "Potus 80cm",
-        "precio": "4300",
+        "precio": "4000",
         "descuento": "10% off",
         "imagen": "1663721625639_img_.jpeg"
     }
