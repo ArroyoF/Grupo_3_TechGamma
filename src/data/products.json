@@ -17,14 +17,14 @@
         "id": 3,
         "nombre": "Planta Monstera 30cm",
         "precio": "$3.250",
-        "descuento": "5% off",
+        "descuento": "15% off",
         "imagen": "monstera.jpg"
     },
     {
         "id": 4,
         "nombre": "Maceta Círculos Tamaño L",
         "precio": "$4.990",
-        "descuento": "10% off",
+        "descuento": "100% off",
         "imagen": "circulo2.jpeg"
     },
     {
