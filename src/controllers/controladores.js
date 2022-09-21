@@ -7,22 +7,23 @@ function cargarProductos(){
     return data
 }
 
+
 function salvarProductos(data){
     const dataString = JSON.stringify(data, null, 4);
     fs.writeFileSync(path.join(__dirname, "../data/products.json"), dataString);
+}
+
+function cargarCarrito(){
+    const jsonData = fs.readFileSync(path.join(__dirname, "../data/carrito.json"));
+    const data = JSON.parse(jsonData);
+    return data
+}
+
+function salvarCarrito(data){
+    const dataString = JSON.stringify(data, null, 4);
+    fs.writeFileSync(path.join(__dirname, "../data/carrito.json"), dataString);
  }
 
-
-
-let carritos = [
-    {
-        id: 1,
-        nombre: 'Maceta Circulos Tamaño M',
-        precio: '$4.990',
-        descuento: '10% off',
-        imagen: '/images/circulo2.jpeg'
-    },
-]
 
 
 let controladores = {
@@ -46,6 +47,7 @@ let controladores = {
     },
 
     productCart:  function(req,res) {
+        const carritos = cargarCarrito();
         res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:carritos});
     },
 
@@ -81,6 +83,7 @@ let controladores = {
 
     actualizarProducto : function(req,res) {
         const plantas = cargarProductos();
+
         let plantaEncontrada = plantas.find(planta => {
             return planta.id == req.params.id
         })
@@ -119,13 +122,22 @@ let controladores = {
     finalizarCompra: function(req,res) {
         let datos_entrar=req.body;
         //res.send(datos_entrar);
-        res.redirect('/');
+        res.redirect('/productList');
     },
 
     agregarCarrito: function(req,res) {
-        let datos_entrar=req.body;
-        //res.send(datos_entrar);
+        const plantas = cargarProductos();
+        const carritos = cargarCarrito();
+
+        let plantaEncontrada = plantas.find(planta => {
+            return planta.id == req.params.id
+        })
+
+        carritos.push(plantaEncontrada);
+
         res.redirect('/productCart');
+
+        salvarCarrito(carritos);
     },
 
     

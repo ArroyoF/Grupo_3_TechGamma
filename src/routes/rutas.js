@@ -28,7 +28,7 @@ router.get('/productList', controladores.productList);
 router.post('/login', controladores.entrar);
 router.post('/register', controladores.crearUsuario);
 router.post('/productCart', controladores.finalizarCompra);
-router.post('/productDetail', controladores.agregarCarrito);
+router.post('/productDetail/:id', controladores.agregarCarrito);
 router.post('/productCreate', uploadFile.single('imagen'), controladores.crearProducto);
 router.put('/productEdit/:id', controladores.actualizarProducto);
 router.delete('/productEdit/:id', controladores.borrarProducto);

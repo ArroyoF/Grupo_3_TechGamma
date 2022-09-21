@@ -427,11 +427,11 @@ main section .products article{
     }
 
     main form {
-        display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         width: 90%;
+        margin: auto;
     }
     
     main button {
@@ -476,6 +476,10 @@ main section .products article{
 
     .detalle-planta img {
         width: 50%;
+    }
+
+    .carrito_img {
+        width: 50px;
     }
 
 

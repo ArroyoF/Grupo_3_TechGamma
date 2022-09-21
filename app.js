@@ -20,5 +20,5 @@ app.use('/',rutas);                                 // define ruteo
 
 
 app.listen(puerto, ()=>{
-    console.log('Servidor funcionando en puerto '+puerto);
+    console.log('Servidor funcionando http://localhost:'+puerto+'/');
 });

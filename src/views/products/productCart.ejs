@@ -7,21 +7,24 @@
         <form action="/productCart" method="post">
             <div class="carrito">
                 <h3>Carrito de compras</h3>
-                <img class=imagen-carrito src=<%= carrito[0].imagen %> alt="">
+                <br>
             </div>
-            <div class="nombre-precio">
-                <p class="nombre-planta"> <%= carrito[0].nombre %> </p>
-                <h4 class="precio-planta"> <%= carrito[0].precio %> </h4>
-            </div>
-            <div class="cantidad">
-                <input type="number" name="cantidad">
-            </div>
-            <div class="total">
-                <p>Total: X</p>
+            <div>
+                <% for (let i=0; i<carrito.length; i++) {  %>    
+                    <div>                                    
+                        <img src="/images/<%= carrito[i].imagen %>" alt="planta1" class="carrito_img">
+                        <span class="name"><%= carrito[i].nombre %></span>
+                        <span class="discount"><%= carrito[i].descuento %></span>
+                        <span class="price"><%= carrito[i].precio %></span>
+                    </div>
+                <% }  %> 
             </div>
             <br>
             <button>Comprar</button>
+            <br>
             <button>Ver mas productos</button> 
+            <br>        
+
         </form>
     </main>
     <%- include('../partials/footer.ejs') %>
