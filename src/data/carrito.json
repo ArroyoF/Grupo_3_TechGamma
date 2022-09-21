@@ -47,5 +47,12 @@
         "precio": "$3.250",
         "descuento": "5% off",
         "imagen": "monstera.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "a",
+        "precio": "a",
+        "descuento": "aa",
+        "imagen": "1663797693309_img_.jpeg"
     }
 ]

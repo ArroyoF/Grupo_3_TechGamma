@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Florencia",
+        "apellido": "Arroyo",
+        "email": "farroyo@gmail.com",
+        "password": "farroyo",
+        "imagen": "circulo2.jpeg"
+    },
+    {
+        "id": 2,
+        "nombre": "Facundo",
+        "apellido": "Neselis",
+        "email": "fneselis@gmail.com",
+        "password": "fneselis",
+        "imagen": "circulo2.jpeg"
+    },
+    {
+        "id": 3,
+        "nombre": "Luis",
+        "apellido": "Tek",
+        "email": "ltek@gmail.com",
+        "password": "ltek",
+        "imagen": "circulo2.jpeg"
+    }
+]
