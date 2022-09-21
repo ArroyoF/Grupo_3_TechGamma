@@ -10,18 +10,24 @@
             <h2 > Registra los datos del nuevo producto:</h2>
         </div>
             
-        <form class="ingreso-datos" action="/productCreate" method="POST">
+        <form class="ingreso-datos" action="/productCreate" enctype="multipart/form-data" method="POST">
             <div><input type="text" name="nombre" placeholder="Nombre del producto"></div> 
             <div><input type="text" name="descuento" placeholder="Descuento"></div> 
-            <div><input type="text" name="imagen" placeholder="Imagen"></div>
+            <div><input type="file" name="imagen" placeholder="Imagen"></div>
             <div><input type="text" name="precio" placeholder="Precio"></div> 
             <div class="botones">
                 <div><input class="boton_enviar" type="submit" value="Enviar"></div>
                 <div><input class="boton_reset" type="reset" value="Borrar"></div>
             </div>
+
         
         </form>
+
         
+        <br>
+        <br>
+        <br>
+
         </main>
 
         <%- include('../partials/footer.ejs') %>

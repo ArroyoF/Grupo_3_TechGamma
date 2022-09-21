@@ -65,11 +65,11 @@ let controladores = {
         const plantas = cargarProductos();
 
         const nuevaPlanta = {
-            id: plantas.length,
+            id: plantas[plantas.length-1].id + 1,
             nombre: req.body.nombre,
-            precio: Number(req.body.precio),
+            precio: req.body.precio,
             descuento: req.body.descuento,
-            image: req.file.filename
+            imagen: req.file.filename
         }
 
         plantas.push(nuevaPlanta);
@@ -136,7 +136,11 @@ let controladores = {
     },
 
     productEdit: function(req,res){
-        res.render(path.join(__dirname,'../views/products/productEdit.ejs'));
+        const plantas = cargarProductos();
+        let plantaEncontrada = plantas.find(planta => {
+            return planta.id == req.params.id
+        })
+        res.render(path.join(__dirname,'../views/products/productEdit.ejs'), { planta : plantaEncontrada});
     },
 };
  

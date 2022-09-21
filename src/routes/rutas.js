@@ -6,7 +6,7 @@ const path = require("path");
 
 const storage = multer.diskStorage({                                // configuración multer para guardar archivo imagen
     destination: function (req, file, cb) { 
-       cb(null, path.join(__dirname, "../../public/img")); 
+       cb(null, path.join(__dirname, "../../public/images")); 
        
     }, 
     filename: function (req, file, cb) { 
@@ -29,7 +29,7 @@ router.post('/login', controladores.entrar);
 router.post('/register', controladores.crearUsuario);
 router.post('/productCart', controladores.finalizarCompra);
 router.post('/productDetail', controladores.agregarCarrito);
-router.post('/productCreate', controladores.crearProducto);
+router.post('/productCreate', uploadFile.single('imagen'), controladores.crearProducto);
 router.put('/productEdit/:id', controladores.actualizarProducto);
 router.delete('/productEdit/:id', controladores.borrarProducto);
 

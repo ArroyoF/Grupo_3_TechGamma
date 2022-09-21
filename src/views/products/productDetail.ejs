@@ -6,7 +6,7 @@
     <main>
     <form action="/productDetail" method="post">
         <div class="imagen-planta">
-            <img src="<%= planta.imagen %>" alt="">
+            <img src="/images/<%= planta.imagen %>" alt="">
         </div>
         <div class="nombre-precio-planta">
             <h3><%= planta.nombre %></h3>
@@ -18,6 +18,20 @@
             <button>Agregar al carrito</button>
         </div> 
     </form>
+
+    <form action="/productEdit/<%= planta.id %>" method="get">
+        <button>Editar</button>
+    </form>
+
+
+    <form action="/productEdit/<%= planta.id %>?_method=DELETE" method="post">
+        <button>Eliminar</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>

@@ -1,82 +1,72 @@
 [
     {
         "id": 1,
-        "nombre": "Maceta Circulos Tamaño M",
+        "nombre": "Maceta Tamaño M",
         "precio": "$4.990",
         "descuento": "10% off",
-        "imagen": "/images/circulo2.jpeg"
+        "imagen": "circulo2.jpeg"
     },
-
     {
         "id": 2,
         "nombre": "Planta Potus 20cm",
-        "precio": "$1.990",
-        "descuento": "",
-        "imagen": "/images/potus.jpeg"
+        "precio": "$1.995",
+        "descuento": "5%",
+        "imagen": "potus.jpeg"
     },
-
     {
         "id": 3,
         "nombre": "Planta Monstera 30cm",
         "precio": "$3.250",
         "descuento": "5% off",
-        "imagen": "/images/monstera.jpg"
+        "imagen": "monstera.jpg"
     },
-
     {
         "id": 4,
         "nombre": "Maceta Circulos Tamaño L",
         "precio": "$4.990",
         "descuento": "10% off",
-        "imagen": "/images/circulo2.jpeg"
+        "imagen": "circulo2.jpeg"
     },
-
     {
         "id": 5,
         "nombre": "Planta Potus 50cm",
         "precio": "$1.990",
         "descuento": "",
-        "imagen": "/images/potus2.jpeg"
+        "imagen": "potus2.jpeg"
     },
-
     {
         "id": 6,
         "nombre": "Planta Monstera 40cm",
         "precio": "$3.250",
         "descuento": "5% off",
-        "imagen": "/images/monstera2.jpeg"
+        "imagen": "monstera2.jpeg"
     },
-
     {
         "id": 7,
         "nombre": "Planta Monstera 60cm",
         "precio": "$3.250",
         "descuento": "5% off",
-        "imagen": "/images/monstera.jpg"
+        "imagen": "monstera.jpg"
     },
-
     {
         "id": 8,
         "nombre": "Maceta Circulos Tamaño XL",
         "precio": "$4.990",
         "descuento": "10% off",
-        "imagen": "/images/circulo3.jpg"
+        "imagen": "circulo3.jpg"
     },
-
-    {
-        "id": 9,
-        "nombre": "Planta Potus 80cm",
-        "precio": "$1.990",
-        "descuento": "",
-        "imagen": "/images/potus.jpeg"
-    },
-
     {
         "id": 10,
         "nombre": "Planta Monstera 90cm",
         "precio": "$3.250",
-        "descuento": "5% off",
-        "imagen": "/images/monstera.jpg"
+        "descuento": "10% off",
+        "imagen": "monstera.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Potus 80cm",
+        "precio": "4300",
+        "descuento": "10% off",
+        "imagen": "1663721625639_img_.jpeg"
     }
-
 ]
