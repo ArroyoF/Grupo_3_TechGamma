@@ -15,3 +15,12 @@ Corregir el css del head en productDetail. - HECHO
 Actualizar archivo retro.md. - HECHO
 Actualizar trello - HECHO
 Listado de producto
+
+21/9
+Sprint 4
+
+tareas pendientes:
+-retro, escala 5
+-weekly, escala 5
+-trello, escala 5
+-mejorar css de algunas vistas, escala 5
