@@ -106,6 +106,9 @@ let controladores = {
         plantaEncontrada.nombre=req.body.nombre;
         plantaEncontrada.precio=req.body.precio;
         plantaEncontrada.descuento=req.body.descuento;
+        if (req.file) {
+            plantaEncontrada.imagen=req.file.filename;
+        }
 
         salvarProductos(plantas);
 
@@ -212,8 +215,11 @@ let controladores = {
                 ingresar=true;
             }
         }
-        
-        res.send(ingresar);
+        if(ingresar==false) {
+            res.send("No posee las credenciales correctas");
+        } else {
+            res.send("Sí posee las credenciales correctas");
+        }
     },
 
     productEdit: function(req,res){

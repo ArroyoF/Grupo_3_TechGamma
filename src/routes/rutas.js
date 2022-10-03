@@ -32,7 +32,7 @@ router.post('/register', uploadFile.single('imagen'), controladores.crearUsuario
 router.post('/productCart', controladores.finalizarCompra);
 router.post('/productDetail/:id', controladores.agregarCarrito);
 router.post('/productCreate', uploadFile.single('imagen'), controladores.crearProducto);
-router.put('/productEdit/:id', controladores.actualizarProducto);
+router.put('/productEdit/:id', uploadFile.single('imagen'), controladores.actualizarProducto);
 router.delete('/productEdit/:id', controladores.borrarProducto);
 router.delete('/productCart/:id', controladores.borrarCarrito);
 router.delete('/usersList/:id', controladores.borrarUsuario);

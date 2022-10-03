@@ -1,13 +1,5 @@
 [
     {
-        "id": 1,
-        "nombre": "Florencia",
-        "apellido": "Arroyo",
-        "email": "farroyo@gmail.com",
-        "password": "farroyo",
-        "imagen": "circulo2.jpeg"
-    },
-    {
         "id": 2,
         "nombre": "Facundo",
         "apellido": "Neselis",
@@ -24,11 +16,11 @@
         "imagen": "circulo2.jpeg"
     },
     {
-        "id": 5,
-        "nombre": "dfsada",
-        "apellido": "sdfsdf",
-        "email": "sdf@fasd.com",
-        "password": "asfsdf",
-        "imagen": "1664833493376_img_.jpg"
+        "id": 4,
+        "nombre": "Florencia",
+        "apellido": "Arroyo",
+        "email": "farroyo@gmail.com",
+        "password": "farroyo",
+        "imagen": "1664834290730_img_.jpg"
     }
 ]
