@@ -23,17 +23,19 @@ router.get('/productDetail/:id', controladores.productDetail);
 router.get('/productCreate', controladores.productCreate);
 router.get('/productEdit/:id', controladores.productEdit);
 router.get('/productList', controladores.productList);
+router.get('/usersList', controladores.usersList);
 router.get('/comprar', controladores.comprar);
 
 
 router.post('/login', controladores.entrar);
-router.post('/register', controladores.crearUsuario);
+router.post('/register', uploadFile.single('imagen'), controladores.crearUsuario);
 router.post('/productCart', controladores.finalizarCompra);
 router.post('/productDetail/:id', controladores.agregarCarrito);
 router.post('/productCreate', uploadFile.single('imagen'), controladores.crearProducto);
 router.put('/productEdit/:id', controladores.actualizarProducto);
 router.delete('/productEdit/:id', controladores.borrarProducto);
 router.delete('/productCart/:id', controladores.borrarCarrito);
+router.delete('/usersList/:id', controladores.borrarUsuario);
 
 module.exports = router;                                            // exporta ruteador
 

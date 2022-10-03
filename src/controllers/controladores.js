@@ -24,6 +24,16 @@ function salvarCarrito(data){
     fs.writeFileSync(path.join(__dirname, "../data/carrito.json"), dataString);
  }
 
+ function cargarUsuarios(){
+    const jsonData = fs.readFileSync(path.join(__dirname, "../data/users.json"));
+    const data = JSON.parse(jsonData);
+    return data
+}
+
+function salvarUsuarios(data){
+    const dataString = JSON.stringify(data, null, 4);
+    fs.writeFileSync(path.join(__dirname, "../data/users.json"), dataString);
+ }
 
 
 let controladores = {
@@ -36,6 +46,11 @@ let controladores = {
     productList: function(req,res) {
         const plantas = cargarProductos();
         res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+    },
+
+    usersList: function(req,res) {
+        const usuarios = cargarUsuarios();
+        res.render(path.join(__dirname,'../views/users/usersList.ejs'), {usuario:usuarios});          // devuelve la página index.ejs al llamar a controlador.index
     },
 
     login:  function(req,res) {
@@ -129,12 +144,6 @@ let controladores = {
 
     },
 
-    entrar: function(req,res) {
-        let datos_entrar=req.body;
-        //res.send(datos_entrar);
-        res.redirect('/');
-    },
-
     finalizarCompra: function(req,res) {
         let datos_entrar=req.body;
         //res.send(datos_entrar);
@@ -158,9 +167,53 @@ let controladores = {
 
     
     crearUsuario: function(req,res) {
-        let datos_entrar=req.body;
-        //res.send(datos_entrar);
-        res.redirect('/');
+        const usuarios = cargarUsuarios();
+
+        const nuevoUsuario = {
+            id: usuarios[usuarios.length-1].id + 1,
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: req.body.password,
+            imagen: req.file.filename
+        }
+
+        usuarios.push(nuevoUsuario);
+
+        salvarUsuarios(usuarios);
+
+        res.redirect('/usersList');                                              // envía a la página de home luego de cargar los datos del formulario
+    },
+
+    borrarUsuario: function(req,res) {
+        const usuarios = cargarUsuarios();
+
+        let indiceEncontrado = usuarios.findIndex(usuario => {
+            return usuario.id == req.params.id
+        })
+ 
+        usuarios.splice(indiceEncontrado,1);
+
+        salvarUsuarios(usuarios);
+
+        res.redirect('/usersList');
+
+    },
+
+
+    entrar: function(req,res) {
+
+        const usuarios = cargarUsuarios();
+        ingresar=false;
+
+        for(i=0;i<usuarios.length;i++) {
+            if((usuarios[i].email==req.body.email) && (usuarios[i].password==req.body.password)) {
+                indiceUsuarioEncontrado=i;
+                ingresar=true;
+            }
+        }
+        
+        res.send(ingresar);
     },
 
     productEdit: function(req,res){
