@@ -113,6 +113,22 @@ let controladores = {
 
     },
 
+    borrarCarrito: function(req,res) {
+        const carritos = cargarCarrito();
+
+        let indiceEncontrado = carritos.findIndex(carrito => {
+            return carrito.id == req.params.id
+        })
+
+ 
+       carritos.splice(indiceEncontrado,1);
+
+        salvarCarrito(carritos);
+
+        res.redirect('/productCart');
+
+    },
+
     entrar: function(req,res) {
         let datos_entrar=req.body;
         //res.send(datos_entrar);
@@ -153,6 +169,10 @@ let controladores = {
             return planta.id == req.params.id
         })
         res.render(path.join(__dirname,'../views/products/productEdit.ejs'), { planta : plantaEncontrada});
+    },
+
+    comprar:  function(req,res) {
+        res.send("Página de comprar");   
     },
 };
  

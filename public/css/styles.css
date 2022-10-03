@@ -509,6 +509,13 @@ main section .products article{
         border: red dotted;
     }
 
+    .boton_carrito {
+        display: inline;
+        background-color: red;
+        width: 25px;
+        border-radius: 100%;
+    }
+
 }
 
 
