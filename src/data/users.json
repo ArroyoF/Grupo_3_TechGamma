@@ -22,5 +22,21 @@
         "email": "farroyo@gmail.com",
         "password": "farroyo",
         "imagen": "1664834290730_img_.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "abc",
+        "apellido": "abc",
+        "email": "abc@gmail.com",
+        "password": "$2a$10$E2p/M/fzzXfcgrLIq0J6EOnZIJuk2MJcw5/PoXlgZIvCSh.6fPLEi",
+        "imagen": "1665090053092_img_.jpeg"
+    },
+    {
+        "id": 7,
+        "nombre": "12345",
+        "apellido": "12345",
+        "email": "12345@gmail.com",
+        "password": "$2a$10$LJY2.QHKLhAfNTKIbRaILe0ezUMkLGSCWOYikSXmg8eWOZEvSECTy",
+        "imagen": "1665102953344_img_.jpeg"
     }
 ]

@@ -7,13 +7,6 @@
         "imagen": "circulo2.jpeg"
     },
     {
-        "id": 2,
-        "nombre": "Planta Potus 20cm",
-        "precio": "$2000",
-        "descuento": "5%",
-        "imagen": "1664839129792_img_.jpg"
-    },
-    {
         "id": 3,
         "nombre": "Planta Monstera 30cm",
         "precio": "$3.250",
@@ -30,7 +23,7 @@
     {
         "id": 5,
         "nombre": "Planta Potus 50cm",
-        "precio": "$1.990",
+        "precio": "$1.995",
         "descuento": "",
         "imagen": "potus2.jpeg"
     },

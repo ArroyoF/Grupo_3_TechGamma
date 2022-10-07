@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require('path');                                           // habilita path
+const bcrypt = require("bcryptjs");
 
 function cargarProductos(){
     const jsonData = fs.readFileSync(path.join(__dirname, "../data/products.json"));
@@ -53,6 +54,14 @@ let controladores = {
         res.render(path.join(__dirname,'../views/users/usersList.ejs'), {usuario:usuarios});          // devuelve la página index.ejs al llamar a controlador.index
     },
 
+    userDetail: function(req,res) {
+        const usuarios = cargarUsuarios();
+        let usuarioEncontrado = usuarios.find(usuarios => {
+            return usuarios.id == req.params.id
+        })
+        res.render(path.join(__dirname,'../views/users/userDetail.ejs'), { user : usuarioEncontrado});
+    },
+
     login:  function(req,res) {
         res.render(path.join(__dirname,'../views/users/login.ejs'));          // devuelve la página login.ejs al llamar a controlador.login
     },
@@ -73,6 +82,8 @@ let controladores = {
         })
         res.render(path.join(__dirname,'../views/products/ProductDetail.ejs'), { planta : plantaEncontrada});
     },
+
+
 
     productCreate:  function(req,res) {
         res.render(path.join(__dirname,'../views/products/productCreate.ejs'));
@@ -177,7 +188,7 @@ let controladores = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 10),
             imagen: req.file.filename
         }
 
@@ -203,6 +214,12 @@ let controladores = {
 
     },
 
+    salir: function(req,res) {
+        req.session.destroy();
+        res.clearCookie("recuerdame");
+        res.redirect('/')
+    },
+
 
     entrar: function(req,res) {
 
@@ -210,16 +227,32 @@ let controladores = {
         ingresar=false;
 
         for(i=0;i<usuarios.length;i++) {
-            if((usuarios[i].email==req.body.email) && (usuarios[i].password==req.body.password)) {
-                indiceUsuarioEncontrado=i;
+            if((usuarios[i].email==req.body.email) && (bcrypt.compareSync(req.body.password,usuarios[i].password))) {
+                indice=i;
                 ingresar=true;
             }
         }
         if(ingresar==false) {
-            res.send("No posee las credenciales correctas");
+            res.render(path.join(__dirname,'../views/users/login.ejs'), {errorIngreso: "Credenciales incorrectas"});
         } else {
-            res.send("Sí posee las credenciales correctas");
+            req.session.usuarioLogeado = {
+                id: usuarios[indice].id,
+                nombre: usuarios[indice].nombre,
+            }
+
+            if(req.body.recordar) {
+                res.cookie("recuerdame", indice, {maxAge:5*60*1000});   // cookie por 5 minutos
+            }
+
+            res.redirect('/');
+    //        res.send(req.session.usuarioLogeado.nombre);
+    //        res.send(usuario);
         }
+    },
+
+    prueba: function(req,res) {
+        res.send(req.session.usuarioLogeado);
+//        res.send(res.cookie.recuerdame);
     },
 
     productEdit: function(req,res){

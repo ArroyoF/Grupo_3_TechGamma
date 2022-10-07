@@ -17,12 +17,21 @@
 
                 <div><input type="email" name="email" placeholder="Correo"></div> 
                 <div><input type="password" name="password" placeholder="Contraseña"></div> 
+                <% if(locals.errorIngreso) { %>
+                    <div> <%= errorIngreso %></div>
+                <% } %>
+                <div>
+                    <input type="checkbox" name="recordar" id="recordar">
+                    <label for="recordar"> Recordar usuario </label>
+                </div>
                 <div class="botones">
                     <div><input class="boton_enviar" type="submit" value="Enviar"></div>
                     <div><input class="boton_reset" type="reset" value="Borrar"></div>
                 </div>
-            
             </form>
+
+            
+            
 
 
         <br>
