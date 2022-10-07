@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require('path');                                           // habilita path
 const bcrypt = require("bcryptjs");
+const {validationResult} = require('express-validator');
+
 
  function cargarUsuarios(){
     const jsonData = fs.readFileSync(path.join(__dirname, "../data/users.json"));
@@ -42,21 +44,26 @@ let controladores = {
     
     crearUsuario: function(req,res) {
         const usuarios = cargarUsuarios();
+        let errors=validationResult(req);
 
-        const nuevoUsuario = {
-            id: usuarios[usuarios.length-1].id + 1,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            imagen: req.file.filename
+        if (errors.isEmpty() && req.file) {
+
+            const nuevoUsuario = {
+                id: usuarios[usuarios.length-1].id + 1,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                imagen: req.file.filename
+            }
+            usuarios.push(nuevoUsuario);
+            salvarUsuarios(usuarios);
+            res.redirect('/user/list');                                              // envía a la página de home luego de cargar los datos del formulario
+
+        } else {
+                res.render(path.join(__dirname,'../views/users/register.ejs'), {errors:errors.mapped(), old:req.body});
         }
 
-        usuarios.push(nuevoUsuario);
-
-        salvarUsuarios(usuarios);
-
-        res.redirect('/user/list');                                              // envía a la página de home luego de cargar los datos del formulario
     },
 
     borrarUsuario: function(req,res) {
@@ -101,7 +108,7 @@ let controladores = {
             }
 
             if(req.body.recordar) {
-                res.cookie("recuerdame", indice, {maxAge:5*60*1000});   // cookie por 5 minutos
+                res.cookie("recuerdame", usuarios[indice].id, {maxAge:5*60*1000});   // cookie por 5 minutos
             }
 
             res.redirect('/');

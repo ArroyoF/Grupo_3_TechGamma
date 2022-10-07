@@ -1,12 +1,5 @@
 [
     {
-        "id": 7,
-        "nombre": "Planta Monstera 60cm",
-        "precio": "$3.250",
-        "descuento": "5% off",
-        "imagen": "monstera.jpg"
-    },
-    {
         "id": 5,
         "nombre": "Planta Potus 50cm",
         "precio": "$1.995",
@@ -21,10 +14,10 @@
         "imagen": "monstera2.jpeg"
     },
     {
-        "id": 11,
-        "nombre": "Potus 80cm",
-        "precio": "4000",
-        "descuento": "10% off",
-        "imagen": "1663721625639_img_.jpeg"
+        "id": 4,
+        "nombre": "Maceta Círculos Tamaño L",
+        "precio": "$4.990",
+        "descuento": "100% off",
+        "imagen": "circulo2.jpeg"
     }
 ]

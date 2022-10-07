@@ -116,13 +116,9 @@ let controladores = {
             return carrito.id == req.params.id
         })
 
- 
-       carritos.splice(indiceEncontrado,1);
-
+        carritos.splice(indiceEncontrado,1);
         salvarCarrito(carritos);
-
         res.redirect('/product/cart');
-
     },
 
     finalizarCompra: function(req,res) {

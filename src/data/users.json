@@ -8,14 +8,6 @@
         "imagen": "circulo2.jpeg"
     },
     {
-        "id": 3,
-        "nombre": "Luis",
-        "apellido": "Tek",
-        "email": "ltek@gmail.com",
-        "password": "ltek",
-        "imagen": "circulo2.jpeg"
-    },
-    {
         "id": 4,
         "nombre": "Florencia",
         "apellido": "Arroyo",
@@ -24,19 +16,27 @@
         "imagen": "1664834290730_img_.jpg"
     },
     {
-        "id": 7,
-        "nombre": "12345",
-        "apellido": "12345",
-        "email": "12345@gmail.com",
-        "password": "$2a$10$LJY2.QHKLhAfNTKIbRaILe0ezUMkLGSCWOYikSXmg8eWOZEvSECTy",
-        "imagen": "1665102953344_img_.jpeg"
+        "id": 13,
+        "nombre": "",
+        "apellido": "dfg",
+        "email": "dfg@gmail.com",
+        "password": "$2a$10$DprPqX4feaz4VtDgWuEswORvfZr547m9Z4TntKgzfnxQJ81Xlf9k2",
+        "imagen": "1665183635689_img_.jpeg"
     },
     {
-        "id": 10,
-        "nombre": "def",
-        "apellido": "def",
-        "email": "def@gmail.com",
-        "password": "$2a$10$dcNLN1GcTsO4b61mb2aAaOEQKRmX4j2w9drka.8FINJpOqO3SC6sW",
-        "imagen": "1665108990480_img_.jpeg"
+        "id": 14,
+        "nombre": "12345a",
+        "apellido": "12345a",
+        "email": "12345a@gmail.com",
+        "password": "$2a$10$b.SnypgI2Cr8IShWOyVad.vDAnxs0DrMsp2ITaFXAwS34HbxOu1T2",
+        "imagen": "1665184595126_img_.jpeg"
+    },
+    {
+        "id": 15,
+        "nombre": "1111",
+        "apellido": "1111",
+        "email": "1111@gmail.com",
+        "password": "$2a$10$NatW/eNXSmmTq/UeeYye3e6TBG.Ifsqb0UXt4KdsO6Vs8ZCP.4Wcm",
+        "imagen": "1665185557930_img_.jpeg"
     }
 ]

@@ -10,10 +10,14 @@ function cargarUsuarios(){
 function recordameMiddle(req,res,next) {   
     const usuarios = cargarUsuarios(); 
     if (req.cookies.recuerdame && !(req.session.usuarioLogeado)) {
-        const indice=req.cookies.recuerdame;
+
+        let indiceEncontrado = usuarios.findIndex(usuario => {
+            return usuario.id == req.cookies.recuerdame;
+        })        
+
         req.session.usuarioLogeado = {
-            id: usuarios[indice].id,
-            nombre: usuarios[indice].nombre,
+            id: usuarios[indiceEncontrado].id,
+            nombre: usuarios[indiceEncontrado].nombre,
         }
     }
     next();
