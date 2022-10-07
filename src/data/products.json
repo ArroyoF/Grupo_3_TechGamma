@@ -61,5 +61,12 @@
         "precio": "4000",
         "descuento": "10% off",
         "imagen": "1663721625639_img_.jpeg"
+    },
+    {
+        "id": 12,
+        "nombre": "Planta",
+        "precio": "3.000",
+        "descuento": "40% off",
+        "imagen": "1665107819454_img_.jpg"
     }
 ]

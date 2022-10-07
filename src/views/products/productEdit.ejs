@@ -9,7 +9,7 @@
             <h2 > Registra los datos del nuevo producto:</h2>
         </div>
             
-        <form class="ingreso-datos" action="/productEdit/<%= planta.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+        <form class="ingreso-datos" action="/product/edit/<%= planta.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
             <div>
                 <label nombre> Nombre </label>
                 <input type="text" name="nombre" value="<%= planta.nombre %>">

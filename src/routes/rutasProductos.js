@@ -18,7 +18,20 @@ const storage = multer.diskStorage({                                // configura
 
 const uploadFile = multer({ storage });
 
-router.get('/', controladoresProductos.index);                               // usa controlador.index al entrar a home
+router.get('/cart', estaLogeado, controladoresProductos.productCart);
+router.get('/detail/:id', controladoresProductos.productDetail);
+router.get('/create', controladoresProductos.productCreate);
+router.get('/edit/:id', estaLogeado, controladoresProductos.productEdit);
+router.get('/list', controladoresProductos.productList);
+router.get('/comprar', controladoresProductos.comprar);
+
+
+router.post('/cart', controladoresProductos.finalizarCompra);
+router.post('/detail/:id', controladoresProductos.agregarCarrito);
+router.post('/create', uploadFile.single('imagen'), controladoresProductos.crearProducto);
+router.put('/edit/:id', uploadFile.single('imagen'), controladoresProductos.actualizarProducto);
+router.delete('/edit/:id', controladoresProductos.borrarProducto);
+router.delete('/cart/:id', controladoresProductos.borrarCarrito);
 
 module.exports = router;                                            // exporta ruteador
 

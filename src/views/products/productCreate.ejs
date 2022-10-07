@@ -4,13 +4,12 @@
     <body>
         <%- include('../partials/header.ejs') %>
         
-        <%- include('../partials/banner.ejs') %>
         
         <div class="titulo-ingreso-datos">
             <h2 > Registra los datos del nuevo producto:</h2>
         </div>
             
-        <form class="ingreso-datos" action="/productCreate" enctype="multipart/form-data" method="POST">
+        <form class="ingreso-datos" action="/product/create" enctype="multipart/form-data" method="POST">
             <div><input type="text" name="nombre" placeholder="Nombre del producto"></div> 
             <div><input type="text" name="descuento" placeholder="Descuento"></div> 
             <div><input type="file" name="imagen" placeholder="Imagen"></div>

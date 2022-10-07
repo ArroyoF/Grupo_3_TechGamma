@@ -15,15 +15,15 @@
             <br>
         </div>
     
-    <form action="/productDetail/<%= planta.id %>" method="post">
+    <form action="/product/detail/<%= planta.id %>" method="post">
             <button>Agregar al carrito</button>
     </form>
     <br>
-    <form action="/productEdit/<%= planta.id %>" method="get">
+    <form action="/product/edit/<%= planta.id %>" method="get">
         <button>Editar</button>
     </form>
     <br>
-    <form action="/productEdit/<%= planta.id %>?_method=DELETE" method="post">
+    <form action="/product/edit/<%= planta.id %>?_method=DELETE" method="post">
         <button>Eliminar</button>
     </form>
     <br>

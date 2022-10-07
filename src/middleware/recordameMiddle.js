@@ -9,7 +9,7 @@ function cargarUsuarios(){
 
 function recordameMiddle(req,res,next) {   
     const usuarios = cargarUsuarios(); 
-    if (req.cookies && !req.session.usuarioLogeado) {
+    if (req.cookies.recuerdame && !(req.session.usuarioLogeado)) {
         const indice=req.cookies.recuerdame;
         req.session.usuarioLogeado = {
             id: usuarios[indice].id,

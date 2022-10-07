@@ -5,7 +5,6 @@
 
         <%- include('../partials/header.ejs') %>
 
-        <%- include('../partials/banner.ejs') %>
 
         <main>
         
@@ -13,7 +12,7 @@
                 <h2 > Ingresa tus datos:</h2>
             </div>
                 
-            <form class="ingreso-datos" action="/login" method="POST">
+            <form class="ingreso-datos" action="/user/login" method="POST">
 
                 <div><input type="email" name="email" placeholder="Correo"></div> 
                 <div><input type="password" name="password" placeholder="Contraseña"></div> 

@@ -9,7 +9,6 @@
 
         <main>
             
-            <%- include('../partials/banner.ejs') %>
             
             <section class="shop">
                 <h3>Productos - Shop</h3>
@@ -17,7 +16,7 @@
 
                     <% for (let i=0; i<planta.length; i++) {  %>                    
                         <article>
-                            <a href="/productDetail/<%= planta[i].id %>">
+                            <a href="/product/detail/<%= planta[i].id %>">
                                 <img src="/images/<%= planta[i].imagen %>" alt="planta1" class="product_img">
                                 <div class="main-article">
                                     <i class="fas fa-shopping-bag"></i>
@@ -33,7 +32,7 @@
 
                 </div>  
 
-                <form action="/productCreate" method="get">
+                <form action="/product/create" method="get">
                     <button>Agregar producto</button>
                 </form>
 

@@ -4,7 +4,7 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-        <form action="/productCart" method="post">
+        <form action="/product/cart" method="post">
             <div class="carrito">
                 <h3>Carrito de compras</h3>
                 <br>
@@ -17,17 +17,17 @@
                         <span class="discount"><%= carrito[i].descuento %></span>
                         <span class="price"><%= carrito[i].precio %></span>
                         <span>
-                            <form action="/productCart/<%= carrito[i].id %>?_method=DELETE" method="post">
+                            <form action="/product/cart/<%= carrito[i].id %>?_method=DELETE" method="post">
                                 <button class="boton_carrito">X</button>
                             </form>
                         </span>
                     </div>
                 <% }  %> 
             </div>
-            <form action="/comprar" method="get">
+            <form action="/product/comprar" method="get">
                 <button>Comprar</button>
             </form>
-            <form action="/productList" method="get">
+            <form action="/product/list" method="get">
                 <button>Ver más productos</button>
             </form>
             <br>        

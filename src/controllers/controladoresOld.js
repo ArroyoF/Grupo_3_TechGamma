@@ -104,7 +104,7 @@ let controladores = {
 
         salvarProductos(plantas);
 
-        res.redirect('/productList');                                              // envía a la página de home luego de cargar los datos del formulario
+        res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
     },
 
     actualizarProducto : function(req,res) {
@@ -123,7 +123,7 @@ let controladores = {
 
         salvarProductos(plantas);
 
-        res.redirect('/productList');                                              // envía a la página de home luego de cargar los datos del formulario
+        res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
 
     },
 
@@ -138,7 +138,7 @@ let controladores = {
 
         salvarProductos(plantas);
 
-        res.redirect('/productList');
+        res.redirect('/product/list');
 
     },
 
@@ -154,14 +154,14 @@ let controladores = {
 
         salvarCarrito(carritos);
 
-        res.redirect('/productCart');
+        res.redirect('/product/cart');
 
     },
 
     finalizarCompra: function(req,res) {
         let datos_entrar=req.body;
         //res.send(datos_entrar);
-        res.redirect('/productList');
+        res.redirect('/product/list');
     },
 
     agregarCarrito: function(req,res) {
@@ -174,7 +174,7 @@ let controladores = {
 
         carritos.push(plantaEncontrada);
 
-        res.redirect('/productCart');
+        res.redirect('/product/cart');
 
         salvarCarrito(carritos);
     },
@@ -196,7 +196,7 @@ let controladores = {
 
         salvarUsuarios(usuarios);
 
-        res.redirect('/usersList');                                              // envía a la página de home luego de cargar los datos del formulario
+        res.redirect('/user/list');                                              // envía a la página de home luego de cargar los datos del formulario
     },
 
     borrarUsuario: function(req,res) {
@@ -210,7 +210,7 @@ let controladores = {
 
         salvarUsuarios(usuarios);
 
-        res.redirect('/usersList');
+        res.redirect('/user/list');
 
     },
 
@@ -252,7 +252,7 @@ let controladores = {
 
     prueba: function(req,res) {
         res.send(req.session.usuarioLogeado);
-//        res.send(res.cookie.recuerdame);
+        res.send(req.cookies.recuerdame);
     },
 
     productEdit: function(req,res){

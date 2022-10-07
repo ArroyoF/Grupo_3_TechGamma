@@ -18,7 +18,16 @@ const storage = multer.diskStorage({                                // configura
 
 const uploadFile = multer({ storage });
 
-router.get('/', controladoresProductos.index);                               // usa controlador.index al entrar a home
+router.get('/login', controladoresUsuarios.login);                          // usa controlador.login al entrar a /login
+router.get('/register', noEstaLogeado, controladoresUsuarios.register);
+router.get('/list', controladoresUsuarios.usersList);
+router.get('/detail/:id', controladoresUsuarios.userDetail);
+router.get('/logout', controladoresUsuarios.salir);
+
+router.post('/login', controladoresUsuarios.entrar);
+router.post('/logout', controladoresUsuarios.salir);
+router.post('/register', uploadFile.single('imagen'), controladoresUsuarios.crearUsuario);
+router.delete('/list/:id', controladoresUsuarios.borrarUsuario);
 
 module.exports = router;                                            // exporta ruteador
 
