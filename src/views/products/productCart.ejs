@@ -4,7 +4,6 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-        <form action="/product/cart" method="post">
             <div class="carrito">
                 <h3>Carrito de compras</h3>
                 <br>
@@ -30,9 +29,10 @@
             <form action="/product/list" method="get">
                 <button>Ver más productos</button>
             </form>
+
+            <a href="/product/list"> Ver más productos</a>
             <br>        
 
-        </form>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
