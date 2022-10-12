@@ -24,3 +24,8 @@ tareas pendientes:
 -weekly, escala 5
 -trello, escala 5
 -mejorar css de algunas vistas, escala 5
+
+
+12/10
+agregar categoria en usuarios y productos
+agregar tamaño en productos
