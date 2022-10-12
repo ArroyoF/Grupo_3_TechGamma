@@ -5,12 +5,5 @@
         "precio": "$4.990",
         "descuento": "100% off",
         "imagen": "circulo2.jpeg"
-    },
-    {
-        "id": 3,
-        "nombre": "Planta Monstera 30cm",
-        "precio": "$3.250",
-        "descuento": "15% off",
-        "imagen": "monstera.jpg"
     }
 ]

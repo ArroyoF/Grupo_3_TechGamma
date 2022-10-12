@@ -29,3 +29,6 @@ tareas pendientes:
 12/10
 agregar categoria en usuarios y productos
 agregar tamaño en productos
+modifica login, register, productdetail, carrito
+esta logueado con error "tenes que estar logueado"
+agregar express validator en crear productos
