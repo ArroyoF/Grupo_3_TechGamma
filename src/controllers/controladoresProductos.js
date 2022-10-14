@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require('path');                                           // habilita path
 const bcrypt = require("bcryptjs");
+const {validationResult} = require('express-validator');
 
 function cargarProductos(){
     const jsonData = fs.readFileSync(path.join(__dirname, "../data/products.json"));
@@ -58,21 +59,29 @@ let controladores = {
 
     crearProducto: function(req,res) {
         const plantas = cargarProductos();
+        let errors=validationResult(req);
 
-        const nuevaPlanta = {
-            id: plantas[plantas.length-1].id + 1,
-            nombre: req.body.nombre,
-            precio: req.body.precio,
-            descuento: req.body.descuento,
-            imagen: req.file.filename
+        if (errors.isEmpty() && req.file) {
+
+            const nuevaPlanta = {
+                id: plantas[plantas.length-1].id + 1,
+                nombre: req.body.nombre,
+                precio: req.body.precio,
+                categoria: req.body.categoria,
+                tamano: req.body.tamano,
+                descuento: req.body.descuento,
+                imagen: req.file.filename
+            }
+            plantas.push(nuevaPlanta);
+            salvarProductos(plantas);
+            res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
+
+        } else {
+            res.render(path.join(__dirname,'../views/product/productCreate.ejs'), {errors:errors.mapped(), old:req.body});
         }
 
-        plantas.push(nuevaPlanta);
-
-        salvarProductos(plantas);
-
-        res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
     },
+
 
     actualizarProducto : function(req,res) {
         const plantas = cargarProductos();
@@ -83,6 +92,8 @@ let controladores = {
 
         plantaEncontrada.nombre=req.body.nombre;
         plantaEncontrada.precio=req.body.precio;
+        plantaEncontrada.categoria=req.body.categoria;
+        plantaEncontrada.tamano=req.body.tamano;
         plantaEncontrada.descuento=req.body.descuento;
         if (req.file) {
             plantaEncontrada.imagen=req.file.filename;

@@ -5,6 +5,20 @@ const multer = require('multer');                                    // requiere
 const path = require("path");
 const estaLogeado = require("../middleware/estaLogeado");
 const noEstaLogeado = require("../middleware/noEstaLogeado");
+const {body} = require('express-validator');
+
+const validateRegister = [
+   body('nombre')
+      .notEmpty().withMessage('Debes completar el nombre'),
+   body('descuento')
+      .notEmpty().withMessage('Debes completar el descuento'),
+   body('categoria')
+      .notEmpty().withMessage('Debes completar la categoria'),
+   body('tamano')
+      .notEmpty().withMessage('Debes completar el tamano'),
+   body('precio')
+      .notEmpty().withMessage('Debes completar el precio')
+]
 
 const storage = multer.diskStorage({                                // configuración multer para guardar archivo imagen
     destination: function (req, file, cb) { 
@@ -27,7 +41,7 @@ router.get('/comprar', controladoresProductos.comprar);
 
 router.post('/cart', controladoresProductos.finalizarCompra);
 router.post('/detail/:id', controladoresProductos.agregarCarrito);
-router.post('/create', uploadFile.single('imagen'), controladoresProductos.crearProducto);
+router.post('/create', uploadFile.single('imagen'), validateRegister, controladoresProductos.crearProducto);
 router.put('/edit/:id', uploadFile.single('imagen'), controladoresProductos.actualizarProducto);
 router.delete('/edit/:id', controladoresProductos.borrarProducto);
 router.delete('/cart/:id', controladoresProductos.borrarCarrito);

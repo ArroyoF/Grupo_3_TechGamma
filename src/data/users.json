@@ -3,6 +3,7 @@
         "id": 2,
         "nombre": "Facundo",
         "apellido": "Neselis",
+        "categoria": "Admin",
         "email": "fneselis@gmail.com",
         "password": "fneselis",
         "imagen": "circulo2.jpeg"
@@ -11,32 +12,27 @@
         "id": 4,
         "nombre": "Florencia",
         "apellido": "Arroyo",
+        "categoria": "Admin",
         "email": "farroyo@gmail.com",
         "password": "farroyo",
         "imagen": "1664834290730_img_.jpg"
     },
     {
-        "id": 13,
-        "nombre": "",
-        "apellido": "dfg",
-        "email": "dfg@gmail.com",
-        "password": "$2a$10$DprPqX4feaz4VtDgWuEswORvfZr547m9Z4TntKgzfnxQJ81Xlf9k2",
-        "imagen": "1665183635689_img_.jpeg"
+        "id": 16,
+        "nombre": "123",
+        "apellido": "123",
+        "categoria": "Admin",
+        "email": "123@gmail.com",
+        "password": "$2a$10$GehC1PzSFFXYMDZPxL.LfeoBC9WuKxd1thM/s9BTwNquoDPTWEmYC",
+        "imagen": "1665774411417_img_.jpeg"
     },
     {
-        "id": 14,
-        "nombre": "12345a",
-        "apellido": "12345a",
-        "email": "12345a@gmail.com",
-        "password": "$2a$10$b.SnypgI2Cr8IShWOyVad.vDAnxs0DrMsp2ITaFXAwS34HbxOu1T2",
-        "imagen": "1665184595126_img_.jpeg"
-    },
-    {
-        "id": 15,
-        "nombre": "1111",
-        "apellido": "1111",
-        "email": "1111@gmail.com",
-        "password": "$2a$10$NatW/eNXSmmTq/UeeYye3e6TBG.Ifsqb0UXt4KdsO6Vs8ZCP.4Wcm",
-        "imagen": "1665185557930_img_.jpeg"
+        "id": 17,
+        "nombre": "asde",
+        "apellido": "asde",
+        "categoria": "Admin",
+        "email": "asde@gmail.com",
+        "password": "$2a$10$K/zKMc5CWfi4bHmq5EO3l.R3VCSGIgvhemF3BxhASgbPgp.AJHhvG",
+        "imagen": "1665774623650_img_.jpeg"
     }
 ]

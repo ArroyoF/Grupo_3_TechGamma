@@ -13,12 +13,15 @@
             </div>
                 
             <form class="ingreso-datos" action="/user/login" method="POST">
-
-                <div><input type="email" name="email" placeholder="Correo"></div> 
-                <div><input type="password" name="password" placeholder="Contraseña"></div> 
+                <% if(locals.errorLogeo) { %>
+                    <div> <%= errorLogeo %></div>
+                <% } %>
                 <% if(locals.errorIngreso) { %>
                     <div> <%= errorIngreso %></div>
                 <% } %>
+                <div><input type="email" name="email" placeholder="Correo"></div> 
+                <div><input type="password" name="password" placeholder="Contraseña"></div> 
+ 
                 <div>
                     <input type="checkbox" name="recordar" id="recordar">
                     <label for="recordar"> Recordar usuario </label>

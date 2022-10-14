@@ -52,6 +52,7 @@ let controladores = {
                 id: usuarios[usuarios.length-1].id + 1,
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
+                categoria: req.body.categoria,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 imagen: req.file.filename

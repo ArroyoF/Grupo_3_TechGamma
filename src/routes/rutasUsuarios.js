@@ -12,6 +12,8 @@ const validateRegister = [
       .notEmpty().withMessage('Debes completar el nombre'),
    body('apellido')
       .notEmpty().withMessage('Debes completar el apeliido'),
+   body('categoria')
+      .notEmpty().withMessage('Debes completar la categoria'),
    body('email')
       .notEmpty().withMessage('Debes completar el email').bail()
       .isEmail().withMessage('Debe ser un email valido'),

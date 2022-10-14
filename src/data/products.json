@@ -3,6 +3,8 @@
         "id": 1,
         "nombre": "Maceta Tamaño M",
         "precio": "$4.990",
+        "categoria": "maceta",
+        "tamano": "grande",
         "descuento": "10% off",
         "imagen": "circulo2.jpeg"
     },
@@ -10,6 +12,8 @@
         "id": 3,
         "nombre": "Planta Monstera 30cm",
         "precio": "$3.250",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "15% off",
         "imagen": "monstera.jpg"
     },
@@ -17,6 +21,8 @@
         "id": 4,
         "nombre": "Maceta Círculos Tamaño L",
         "precio": "$4.990",
+        "categoria": "maceta",
+        "tamano": "grande",
         "descuento": "100% off",
         "imagen": "circulo2.jpeg"
     },
@@ -24,6 +30,8 @@
         "id": 5,
         "nombre": "Planta Potus 50cm",
         "precio": "$1.995",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "",
         "imagen": "potus2.jpeg"
     },
@@ -31,6 +39,8 @@
         "id": 6,
         "nombre": "Planta Monstera 40cm",
         "precio": "$3.250",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "5% off",
         "imagen": "monstera2.jpeg"
     },
@@ -38,6 +48,8 @@
         "id": 7,
         "nombre": "Planta Monstera 60cm",
         "precio": "$3.250",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "5% off",
         "imagen": "monstera.jpg"
     },
@@ -45,6 +57,8 @@
         "id": 8,
         "nombre": "Maceta Circulos Tamaño XL",
         "precio": "$4.990",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "10% off",
         "imagen": "circulo3.jpg"
     },
@@ -52,6 +66,8 @@
         "id": 10,
         "nombre": "Planta Monstera 90cm",
         "precio": "$3.250",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "10% off",
         "imagen": "monstera.jpg"
     },
@@ -59,6 +75,8 @@
         "id": 11,
         "nombre": "Potus 80cm",
         "precio": "4000",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "10% off",
         "imagen": "1663721625639_img_.jpeg"
     },
@@ -66,7 +84,18 @@
         "id": 12,
         "nombre": "Planta",
         "precio": "3.000",
+        "categoria": "planta",
+        "tamano": "grande",
         "descuento": "40% off",
         "imagen": "1665107819454_img_.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "nuevo",
+        "precio": "nuevo",
+        "categoria": "nuevo",
+        "tamano": "nuevo",
+        "descuento": "nuevo",
+        "imagen": "1665776808951_img_.jpeg"
     }
 ]
