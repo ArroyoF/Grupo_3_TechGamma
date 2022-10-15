@@ -77,7 +77,7 @@ let controladores = {
             res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
 
         } else {
-            res.render(path.join(__dirname,'../views/product/productCreate.ejs'), {errors:errors.mapped(), old:req.body});
+            res.render(path.join(__dirname,'../views/products/productCreate.ejs'), {errors:errors.mapped(), old:req.body});
         }
 
     },

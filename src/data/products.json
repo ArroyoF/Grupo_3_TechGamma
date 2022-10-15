@@ -91,11 +91,20 @@
     },
     {
         "id": 13,
-        "nombre": "nuevo",
-        "precio": "nuevo",
-        "categoria": "nuevo",
-        "tamano": "nuevo",
-        "descuento": "nuevo",
-        "imagen": "1665776808951_img_.jpeg"
+        "nombre": "1",
+        "precio": "1",
+        "categoria": "11",
+        "tamano": "1",
+        "descuento": "1",
+        "imagen": "1665796116575_img_.jpeg"
+    },
+    {
+        "id": 14,
+        "nombre": "12",
+        "precio": "12",
+        "categoria": "12",
+        "tamano": "12",
+        "descuento": "12",
+        "imagen": "1665796408931_img_.jpeg"
     }
 ]

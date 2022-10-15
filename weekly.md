@@ -31,4 +31,4 @@ agregar categoria en usuarios y productos - listo
 agregar tamaño en productos - listo
 modifica login, register, productdetail, carrito
 esta logueado con error "tenes que estar logueado" - listo
-agregar express validator en crear productos
+agregar express validator en crear productos - listo
