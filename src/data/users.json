@@ -18,12 +18,12 @@
         "imagen": "1664834290730_img_.jpg"
     },
     {
-        "id": 17,
-        "nombre": "asde",
-        "apellido": "asde",
-        "categoria": "Admin",
-        "email": "asde@gmail.com",
-        "password": "$2a$10$K/zKMc5CWfi4bHmq5EO3l.R3VCSGIgvhemF3BxhASgbPgp.AJHhvG",
-        "imagen": "1665774623650_img_.jpeg"
+        "id": 18,
+        "nombre": "1234",
+        "apellido": "1234",
+        "categoria": "1234",
+        "email": "1234@gmail.com",
+        "password": "$2a$10$j7kzRVOrCpLDn59DVvXalujIdJt0q0JbNv/vcxtO7JjY3lNSRfbHy",
+        "imagen": "1666045912753_img_.jpeg"
     }
 ]

@@ -14,45 +14,25 @@
             <section class="shop">
                 <h3>Productos - Shop</h3>
                 <div class="products">
-                    <article>
-                        <a href="/product/detail/1">
-                            <img src="/images/<%= planta[0].imagen %>" alt="planta1" class="product_img">
-                            <div class="main-article">
-                                <i class="fas fa-shopping-bag"></i>
-                                <div class="precio-desc">
-                                    <p class="price"><%= planta[0].precio %></p>
-                                    <p class="discount"><%= planta[0].descuento %></p>
+
+
+                    <% for (let i=0; i<3; i++) {  %>                    
+                        <article>
+                            <a href="/product/detail/<%= planta[i].id %>">
+                                <img src="/images/<%= planta[i].imagen %>" alt="planta1" class="product_img">
+                                <div class="main-article">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <div class="precio-desc">
+                                        <p class="price"><%= planta[i].precio %></p>
+                                        <p class="discount"><%= planta[i].descuento %></p>
+                                    </div>
+                                    <h4 class="description"><%= planta[i].nombre %></h4>
                                 </div>
-                                <h4 class="description"><%= planta[0].nombre %></h4>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="/product/detail/2">
-                            <img src="/images/<%= planta[1].imagen %>" alt="planta3" class="product_img">
-                            <div class="main-article">
-                                <i class="fas fa-shopping-bag"></i>
-                                <div class="precio-desc">
-                                    <p class="price"><%= planta[1].precio %></p>
-                                    <p class="discount"><%= planta[1].descuento %></p>
-                                </div>
-                                <h4 class="description"><%= planta[1].nombre %></h4>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="/product/detail/3">
-                            <img src="/images/<%= planta[2].imagen %>" alt="planta3" class="product_img">
-                            <div class="main-article">
-                                <i class="fas fa-shopping-bag"></i>
-                                <div class="precio-desc">
-                                    <p class="price"><%= planta[2].precio %></p>
-                                    <p class="discount"><%= planta[2].descuento %></p>
-                                </div>
-                            <h4 class="description"><%= planta[2].nombre %></h4>
-                            </div>
-                        </a>
-                    </article>
+                            </a>
+                        </article>
+                    <% }  %> 
+
+
 
                     <article>
                         <a href="/product/list">

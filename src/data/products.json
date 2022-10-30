@@ -18,24 +18,6 @@
         "imagen": "monstera.jpg"
     },
     {
-        "id": 4,
-        "nombre": "Maceta Círculos Tamaño L",
-        "precio": "$4.990",
-        "categoria": "maceta",
-        "tamano": "grande",
-        "descuento": "100% off",
-        "imagen": "circulo2.jpeg"
-    },
-    {
-        "id": 5,
-        "nombre": "Planta Potus 50cm",
-        "precio": "$1.995",
-        "categoria": "planta",
-        "tamano": "grande",
-        "descuento": "",
-        "imagen": "potus2.jpeg"
-    },
-    {
         "id": 6,
         "nombre": "Planta Monstera 40cm",
         "precio": "$3.250",
@@ -79,32 +61,5 @@
         "tamano": "grande",
         "descuento": "10% off",
         "imagen": "1663721625639_img_.jpeg"
-    },
-    {
-        "id": 12,
-        "nombre": "Planta",
-        "precio": "3.000",
-        "categoria": "planta",
-        "tamano": "grande",
-        "descuento": "40% off",
-        "imagen": "1665107819454_img_.jpg"
-    },
-    {
-        "id": 13,
-        "nombre": "1",
-        "precio": "1",
-        "categoria": "11",
-        "tamano": "1",
-        "descuento": "1",
-        "imagen": "1665796116575_img_.jpeg"
-    },
-    {
-        "id": 14,
-        "nombre": "12",
-        "precio": "12",
-        "categoria": "12",
-        "tamano": "12",
-        "descuento": "12",
-        "imagen": "1665796408931_img_.jpeg"
     }
 ]
