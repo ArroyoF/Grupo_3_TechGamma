@@ -25,5 +25,14 @@
         "email": "1234@gmail.com",
         "password": "$2a$10$j7kzRVOrCpLDn59DVvXalujIdJt0q0JbNv/vcxtO7JjY3lNSRfbHy",
         "imagen": "1666045912753_img_.jpeg"
+    },
+    {
+        "id": 19,
+        "nombre": "asdas",
+        "apellido": "asdadssa",
+        "categoria": "asdadssa",
+        "email": "asdad@gmail.com",
+        "password": "$2a$10$4lrCRSFFUF.t0PfSsQ79GeQBxfKw/Uphb.UfYkNK1CLMxbEjrNLhi",
+        "imagen": "1667258480463_img_.jpg"
     }
 ]
