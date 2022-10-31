@@ -484,7 +484,7 @@ main section .products article{
 
     .product-detail {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .detalle-planta {
@@ -492,7 +492,7 @@ main section .products article{
     }
 
     .detalle-planta img {
-        width: 40%;
+        width: 20%;
         display: flex;
     }
 
