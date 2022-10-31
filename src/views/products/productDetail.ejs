@@ -3,7 +3,7 @@
     <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main>
+    <main class="product-detail">
     
         <div class="detalle-planta">
             <img src="/images/<%= planta.imagen %>" alt="">
@@ -16,16 +16,17 @@
         </div>
     
     <form action="/product/detail/<%= planta.id %>" method="post">
-            <button>Agregar al carrito</button>
+            <button class="agregar-carrito">Agregar al carrito</button>
     </form>
     <br>
     <form action="/product/edit/<%= planta.id %>" method="get">
-        <button>Editar</button>
+        <button class="editar-carrito">Editar</button>
     </form>
     <br>
     <form action="/product/edit/<%= planta.id %>?_method=DELETE" method="post">
-        <button>Eliminar</button>
+        <button class="eliminar-carrito">Eliminar</button>
     </form>
+    
     <br>
     <br>
     <br>

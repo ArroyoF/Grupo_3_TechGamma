@@ -482,6 +482,40 @@ main section .products article{
         width: 50px;
     }
 
+    .product-detail {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .detalle-planta {
+        width: 100%;
+    }
+
+    .detalle-planta img {
+        width: 40%;
+        display: flex;
+    }
+
+    .agregar-carrito,.editar-carrito, .eliminar-carrito{
+        transition: all 0.5s;
+        width: 200px;
+    }
+
+    .agregar-carrito:hover {  
+        background-color: #004b45;
+        color: white;   
+    }
+
+    .editar-carrito:hover {
+        background-color: #004b45;
+        color: white;
+    }
+
+    .eliminar-carrito:hover {
+        background-color: red;
+        color: white;
+    }
+
 
 @media (min-width:470px) {
 
