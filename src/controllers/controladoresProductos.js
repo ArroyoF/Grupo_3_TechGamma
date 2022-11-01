@@ -38,6 +38,16 @@ let controladores = {
         res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
     },
 
+    plantasList: function(req,res) {
+        const plantas = cargarProductos();
+        res.render(path.join(__dirname,'../views/products/plantasList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+    },
+
+    macetasList: function(req,res) {
+        const plantas = cargarProductos();
+        res.render(path.join(__dirname,'../views/products/macetasList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+    },
+
     productCart:  function(req,res) {
         const carritos = cargarCarrito();
         res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:carritos});

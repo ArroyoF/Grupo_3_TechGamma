@@ -35,6 +35,8 @@ router.get('/cart', estaLogeado, controladoresProductos.productCart);
 router.get('/detail/:id', controladoresProductos.productDetail);
 router.get('/create', controladoresProductos.productCreate);
 router.get('/edit/:id', estaLogeado, controladoresProductos.productEdit);
+router.get('/list/plantas', controladoresProductos.plantasList);
+router.get('/list/macetas', controladoresProductos.macetasList);
 router.get('/list', controladoresProductos.productList);
 router.get('/comprar', controladoresProductos.comprar);
 
