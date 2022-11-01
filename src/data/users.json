@@ -6,7 +6,7 @@
         "categoria": "Admin",
         "email": "admin@gmail.com",
         "password": "$2a$10$1oiv/N.tQYXMSLh9aHNumOZEwZH0SHMjVWY7eplTaoVBx1W3NTIL2",
-        "imagen": "1667268542009_img_.jpeg"
+        "imagen": "usuario.jpg"
     },
     {
         "id": 21,
@@ -15,6 +15,6 @@
         "categoria": "User",
         "email": "user@gmail.com",
         "password": "$2a$10$fOHZb5s/lUanJionm7VV1OyWxUiMhxER9vodJsHzm2fS2d1CXQt4O",
-        "imagen": "1667268683204_img_.jpeg"
+        "imagen": "usuario.jpg"
     }
 ]

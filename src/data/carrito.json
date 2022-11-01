@@ -9,15 +9,6 @@
         "imagen": "1663721625639_img_.jpeg"
     },
     {
-        "id": 1,
-        "nombre": "Maceta Tamaño M",
-        "precio": "$4.990",
-        "categoria": "maceta",
-        "tamano": "grande",
-        "descuento": "10% off",
-        "imagen": "circulo2.jpeg"
-    },
-    {
         "id": 6,
         "nombre": "Planta Monstera 40cm",
         "precio": "$3.250",
@@ -33,6 +24,15 @@
         "categoria": "planta",
         "tamano": "grande",
         "descuento": "15% off",
+        "imagen": "monstera.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Planta Monstera 60cm",
+        "precio": "$3.250",
+        "categoria": "planta",
+        "tamano": "grande",
+        "descuento": "5% off",
         "imagen": "monstera.jpg"
     }
 ]

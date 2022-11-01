@@ -18,7 +18,14 @@
             <% if (locals.errors && errors.descuento) { %>
                 <p><%=errors.descuento.msg%></p>
             <% } %> 
-            <div><input type="text" name="categoria" placeholder="Categoria" value="<%= locals.old && locals.old.categoria %>"></div>
+
+            <div>
+                <input type="radio" name="categoria" value="planta">
+                <label for="planta">Planta</label>
+                <input type="radio" name="categoria" value="maceta">
+                <label for="maceta">Maceta</label>
+            </div>
+            
             <% if (locals.errors && errors.categoria) { %>
                 <p><%=errors.categoria.msg%></p>
             <% } %> 
