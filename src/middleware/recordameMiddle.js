@@ -18,6 +18,7 @@ function recordameMiddle(req,res,next) {
         req.session.usuarioLogeado = {
             id: usuarios[indiceEncontrado].id,
             nombre: usuarios[indiceEncontrado].nombre,
+            categoria: usuarios[indiceEncontrado].categoria
         }
     }
     next();

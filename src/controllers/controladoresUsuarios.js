@@ -21,7 +21,11 @@ let controladores = {
     
     usersList: function(req,res) {
         const usuarios = cargarUsuarios();
-        res.render(path.join(__dirname,'../views/users/usersList.ejs'), {usuario:usuarios});          // devuelve la página index.ejs al llamar a controlador.index
+        if(req.session.usuarioLogeado.categoria=="Admin") {
+            res.render(path.join(__dirname,'../views/users/usersList.ejs'), {usuario:usuarios});          // devuelve la página index.ejs al llamar a controlador.index
+        } else {
+            res.redirect('/user/detail/'+req.session.usuarioLogeado.id);
+        }
     },
 
     userDetail: function(req,res) {
@@ -59,7 +63,7 @@ let controladores = {
             }
             usuarios.push(nuevoUsuario);
             salvarUsuarios(usuarios);
-            res.redirect('/user/list');                                              // envía a la página de home luego de cargar los datos del formulario
+            res.redirect('/user/login');                                              // envía a la página de home luego de cargar los datos del formulario
 
         } else {
                 res.render(path.join(__dirname,'../views/users/register.ejs'), {errors:errors.mapped(), old:req.body});
@@ -106,6 +110,7 @@ let controladores = {
             req.session.usuarioLogeado = {
                 id: usuarios[indice].id,
                 nombre: usuarios[indice].nombre,
+                categoria: usuarios[indice].categoria
             }
 
             if(req.body.recordar) {
