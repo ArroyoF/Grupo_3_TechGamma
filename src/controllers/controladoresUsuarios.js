@@ -50,7 +50,7 @@ let controladores = {
         const usuarios = cargarUsuarios();
         let errors=validationResult(req);
 
-        if (errors.isEmpty() && req.file) {
+        if (errors.isEmpty()) {
 
             const nuevoUsuario = {
                 id: usuarios[usuarios.length-1].id + 1,
@@ -59,7 +59,7 @@ let controladores = {
                 categoria: req.body.categoria,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                imagen: req.file.filename
+                imagen: req.file ? req.file.filename : "usuario.jpg"
             }
             usuarios.push(nuevoUsuario);
             salvarUsuarios(usuarios);

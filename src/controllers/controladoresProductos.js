@@ -71,7 +71,7 @@ let controladores = {
         const plantas = cargarProductos();
         let errors=validationResult(req);
 
-        if (errors.isEmpty() && req.file) {
+        if (errors.isEmpty()) {
 
             const nuevaPlanta = {
                 id: plantas[plantas.length-1].id + 1,
@@ -80,7 +80,7 @@ let controladores = {
                 categoria: req.body.categoria,
                 tamano: req.body.tamano,
                 descuento: req.body.descuento,
-                imagen: req.file.filename
+                imagen: req.file ? req.file.filename : "masProductos.png"
             }
             plantas.push(nuevaPlanta);
             salvarProductos(plantas);

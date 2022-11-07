@@ -16,5 +16,14 @@
         "email": "user@gmail.com",
         "password": "$2a$10$fOHZb5s/lUanJionm7VV1OyWxUiMhxER9vodJsHzm2fS2d1CXQt4O",
         "imagen": "usuario.jpg"
+    },
+    {
+        "id": 22,
+        "nombre": "33",
+        "apellido": "33",
+        "categoria": "User",
+        "email": "33@gmail.com",
+        "password": "$2a$10$wSzMU/YfUyC/aYEZlG9L9OyhCuQPYNCZVutqRieFFiCTivmiHeCH2",
+        "imagen": "usuario.jpg"
     }
 ]
