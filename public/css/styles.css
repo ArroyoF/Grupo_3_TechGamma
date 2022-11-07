@@ -566,7 +566,16 @@ main section .products article{
     background-position: 0 100%;
 }
 
+.detalle-usuario {
+    text-align: center;
+    margin: 40px;
+}
 
+.detalle-usuario img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
 
 @media (min-width:470px) {
 
