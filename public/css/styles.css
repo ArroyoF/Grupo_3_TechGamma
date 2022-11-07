@@ -448,9 +448,9 @@ main section .products article{
         width: 50px;
     }
 
-    .product-detail {
-        display: flex;
-        flex-direction: column;
+    .product-detail { 
+        text-align: center;
+        margin: 30px;
     }
 
     .detalle-planta {
@@ -459,7 +459,6 @@ main section .products article{
 
     .detalle-planta img {
         width: 20%;
-        display: flex;
     }
 
     .agregar-carrito,.editar-carrito, .eliminar-carrito{
@@ -565,6 +564,8 @@ main section .products article{
     background-image: linear-gradient(to top, #004b45 51%, transparent 50%);
     background-position: 0 100%;
 }
+
+/*userdetail*/
 
 .detalle-usuario {
     text-align: center;
