@@ -1,90 +1,96 @@
+const db = require ('../../database/models')
+const { Op } = require("sequelize");
+
 const fs = require("fs");
 const path = require('path');                                           // habilita path
-const bcrypt = require("bcryptjs");
 const {validationResult} = require('express-validator');
 
-function cargarProductos(){
-    const jsonData = fs.readFileSync(path.join(__dirname, "../data/products.json"));
-    const data = JSON.parse(jsonData);
-    return data
-}
-
-
-function salvarProductos(data){
-    const dataString = JSON.stringify(data, null, 4);
-    fs.writeFileSync(path.join(__dirname, "../data/products.json"), dataString);
-}
-
-function cargarCarrito(){
-    const jsonData = fs.readFileSync(path.join(__dirname, "../data/carrito.json"));
-    const data = JSON.parse(jsonData);
-    return data
-}
-
-function salvarCarrito(data){
-    const dataString = JSON.stringify(data, null, 4);
-    fs.writeFileSync(path.join(__dirname, "../data/carrito.json"), dataString);
- }
-
 let controladores = {
-    
+
     index: function(req,res) {
-        const plantas = cargarProductos();
-        res.render(path.join(__dirname,'../views/index.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+        db.products.findAll({
+                order:[['id','ASC']],
+                offset:0,
+                limit:100
+            })
+            .then((plantas) => {
+                res.render(path.join(__dirname,'../views/index.ejs'), {planta:plantas}); 
+            })
     },
-    
+
+
     productList: function(req,res) {
-        const plantas = cargarProductos();
-        res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+        db.products.findAll({
+                order:[['id','ASC']],
+                offset:0,
+                limit:100
+            })
+            .then((plantas) => {
+                res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas}); 
+            })
     },
 
     plantasList: function(req,res) {
-        const plantas = cargarProductos();
-        res.render(path.join(__dirname,'../views/products/plantasList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+        db.products.findAll({
+                where:{categoria:"planta"}
+            })
+            .then((plantas) => {
+                res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas}); 
+            })
     },
 
     macetasList: function(req,res) {
-        const plantas = cargarProductos();
-        res.render(path.join(__dirname,'../views/products/macetasList.ejs'), {planta:plantas});          // devuelve la página index.ejs al llamar a controlador.index
+        db.products.findAll({
+                where:{categoria:"maceta"}
+            })
+            .then((plantas) => {
+                res.render(path.join(__dirname,'../views/products/productList.ejs'), {planta:plantas}); 
+            })
     },
-
-    productCart:  function(req,res) {
-        const carritos = cargarCarrito();
-        res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:carritos});
+    
+    
+    productDetail: function(req,res) {
+        db.products.findByPk(req.params.id)
+            .then((plantaEncontrada) => {
+                res.render(path.join(__dirname,'../views/products/productDetail.ejs'), {planta:plantaEncontrada}); 
+            })
     },
-
-    productDetail:  function(req,res) {
-        const plantas = cargarProductos();
-        let plantaEncontrada = plantas.find(planta => {
-            return planta.id == req.params.id
-        })
-        res.render(path.join(__dirname,'../views/products/ProductDetail.ejs'), { planta : plantaEncontrada});
-    },
-
-
 
     productCreate:  function(req,res) {
         res.render(path.join(__dirname,'../views/products/productCreate.ejs'));
     },
 
+    productCart:  function(req,res) {
+        
+        db.carrito.findAll({
+            include:['products'],
+            where:{id_users:req.session.usuarioLogeado.id},
+            order:[['id_products','ASC']]
+        })
+        .then((carritos) => {
+            let listado=[];
+            for(let i=0; i<carritos.length; i++){
+                let {products}=carritos[i];
+                listado.push(products)
+            }
+
+            res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:listado}); 
+        })
+
+    },        
+
     crearProducto: function(req,res) {
-        const plantas = cargarProductos();
         let errors=validationResult(req);
-
         if (errors.isEmpty()) {
-
-            const nuevaPlanta = {
-                id: plantas[plantas.length-1].id + 1,
+            db.products.create({
                 nombre: req.body.nombre,
                 precio: req.body.precio,
                 categoria: req.body.categoria,
                 tamano: req.body.tamano,
                 descuento: req.body.descuento,
-                imagen: req.file ? req.file.filename : "masProductos.png"
-            }
-            plantas.push(nuevaPlanta);
-            salvarProductos(plantas);
-            res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
+                imagen: req.file ? req.file.filename : "plant.jpeg"
+            })
+            .then(res.redirect('/product/list'));                                              // envía a la página de home luego de cargar los datos del formulario
 
         } else {
             res.render(path.join(__dirname,'../views/products/productCreate.ejs'), {errors:errors.mapped(), old:req.body});
@@ -92,54 +98,61 @@ let controladores = {
 
     },
 
-
     actualizarProducto : function(req,res) {
-        const plantas = cargarProductos();
 
-        let plantaEncontrada = plantas.find(planta => {
-            return planta.id == req.params.id
-        })
-
-        plantaEncontrada.nombre=req.body.nombre;
-        plantaEncontrada.precio=req.body.precio;
-        plantaEncontrada.categoria=req.body.categoria;
-        plantaEncontrada.tamano=req.body.tamano;
-        plantaEncontrada.descuento=req.body.descuento;
         if (req.file) {
-            plantaEncontrada.imagen=req.file.filename;
+            db.products.update ({
+                nombre: req.body.nombre,
+                precio: req.body.precio,
+                categoria: req.body.categoria,
+                tamano: req.body.tamano,
+                descuento: req.body.descuento,
+                imagen: req.file.filename
+            },{
+                where: {id:req.params.id}
+            })
+            .then(res.redirect('/product/list'));                                              // envía a la página de home luego de cargar los datos del formulario
+
+        }else{
+            db.products.update ({
+                nombre: req.body.nombre,
+                precio: req.body.precio,
+                categoria: req.body.categoria,
+                tamano: req.body.tamano,
+                descuento: req.body.descuento,
+                // imagen: req.file.filename
+            },{
+                where: {id:req.params.id}
+            })
+            .then(res.redirect('/product/list'));                                              // envía a la página de home luego de cargar los datos del formulario
         }
-
-        salvarProductos(plantas);
-
-        res.redirect('/product/list');                                              // envía a la página de home luego de cargar los datos del formulario
-
     },
 
     borrarProducto: function(req,res) {
-        const plantas = cargarProductos();
-        
-        let indiceEncontrado = plantas.findIndex(planta => {
-            return planta.id == req.params.id
+        db.products.destroy ({
+            where: {id:req.params.id}
         })
-
-        plantas.splice(indiceEncontrado,1);
-
-        salvarProductos(plantas);
-
-        res.redirect('/product/list');
-
+        .then(res.redirect('/product/list'));
     },
 
     borrarCarrito: function(req,res) {
-        const carritos = cargarCarrito();
-
-        let indiceEncontrado = carritos.findIndex(carrito => {
-            return carrito.id == req.params.id
+        db.carrito.findOne({
+            where: [
+                        {id_users: req.session.usuarioLogeado.id},
+                        {id_products: req.params.id}
+                    ]
         })
+        .then(carrito => {
+            console.log(carrito.id);
+            db.carrito.destroy ({
+                where: [
+                    {id:carrito.id}
+                ]
+            })
+        })
+        .then(res.redirect('/product/cart'));
 
-        carritos.splice(indiceEncontrado,1);
-        salvarCarrito(carritos);
-        res.redirect('/product/cart');
+
     },
 
     finalizarCompra: function(req,res) {
@@ -149,27 +162,29 @@ let controladores = {
     },
 
     agregarCarrito: function(req,res) {
-        const plantas = cargarProductos();
-        const carritos = cargarCarrito();
 
-        let plantaEncontrada = plantas.find(planta => {
-            return planta.id == req.params.id
+        db.carrito.create({
+            id_users: req.session.usuarioLogeado.id,
+            id_products: req.params.id
         })
+        .then(res.redirect('/product/cart'));  
 
-        carritos.push(plantaEncontrada);
-
-        res.redirect('/product/cart');
-
-        salvarCarrito(carritos);
     },
 
+
+    // productEdit: function(req,res){
+    //     const plantas = cargarProductos();
+    //     let plantaEncontrada = plantas.find(planta => {
+    //         return planta.id == req.params.id
+    //     })
+    //     res.render(path.join(__dirname,'../views/products/productEdit.ejs'), { planta : plantaEncontrada});
+    // },
  
     productEdit: function(req,res){
-        const plantas = cargarProductos();
-        let plantaEncontrada = plantas.find(planta => {
-            return planta.id == req.params.id
-        })
-        res.render(path.join(__dirname,'../views/products/productEdit.ejs'), { planta : plantaEncontrada});
+        db.products.findByPk(req.params.id)
+            .then((plantaEncontrada) => {
+                res.render(path.join(__dirname,'../views/products/productEdit.ejs'), {planta:plantaEncontrada}); 
+            })
     },
 
     comprar:  function(req,res) {

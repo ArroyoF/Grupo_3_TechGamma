@@ -14,18 +14,11 @@
             <% if (locals.errors && errors.nombre) { %>
                 <p><%=errors.nombre.msg%></p>
             <% } %> 
-            <div><input type="text" name="descuento" placeholder="Descuento" value="<%= locals.old && locals.old.nombre %>"></div>
+            <div><input type="text" name="descuento" placeholder="Descuento" value="<%= locals.old && locals.old.descuento %>"></div>
             <% if (locals.errors && errors.descuento) { %>
                 <p><%=errors.descuento.msg%></p>
             <% } %> 
-
-            <div>
-                <input type="radio" name="categoria" value="planta">
-                <label for="planta">Planta</label>
-                <input type="radio" name="categoria" value="maceta">
-                <label for="maceta">Maceta</label>
-            </div>
-            
+            <div><input type="text" name="categoria" placeholder="Categoria" value="<%= locals.old && locals.old.categoria %>"></div>
             <% if (locals.errors && errors.categoria) { %>
                 <p><%=errors.categoria.msg%></p>
             <% } %> 
