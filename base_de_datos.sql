@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-11-2022 a las 01:17:30
+-- Tiempo de generación: 09-11-2022 a las 03:59:54
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -32,19 +32,21 @@ USE `proyectoDH`;
 CREATE TABLE `carrito` (
   `id` int(11) NOT NULL,
   `id_users` int(11) NOT NULL,
-  `id_products` int(11) NOT NULL
+  `id_products` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `carrito`
 --
 
-INSERT INTO `carrito` (`id`, `id_users`, `id_products`) VALUES
-(13, 1, 4),
-(28, 2, 5),
-(29, 2, 2),
-(30, 2, 3),
-(37, 1, 3);
+INSERT INTO `carrito` (`id`, `id_users`, `id_products`, `cantidad`) VALUES
+(30, 2, 3, 4),
+(50, 1, 2, 2),
+(51, 1, 5, 3),
+(54, 2, 1, 2),
+(55, 2, 5, 2),
+(56, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -128,13 +130,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

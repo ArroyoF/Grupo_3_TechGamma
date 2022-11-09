@@ -449,6 +449,10 @@ main section .products article{
         width: 50px;
     }
 
+    .users_img {
+        width: 150px;
+    }
+
     .product-detail { 
         text-align: center;
         margin: 30px;

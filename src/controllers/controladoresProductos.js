@@ -4,6 +4,7 @@ const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require('path');                                           // habilita path
 const {validationResult} = require('express-validator');
+const { captureRejectionSymbol } = require('events');
 
 let controladores = {
 
@@ -61,21 +62,32 @@ let controladores = {
     },
 
     productCart:  function(req,res) {
-        
-        db.carrito.findAll({
-            include:['products'],
-            where:{id_users:req.session.usuarioLogeado.id},
-            order:[['id_products','ASC']]
-        })
-        .then((carritos) => {
-            let listado=[];
-            for(let i=0; i<carritos.length; i++){
-                let {products}=carritos[i];
-                listado.push(products)
-            }
 
-            res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:listado}); 
+        db.carrito.findAll({
+            include:["products"],
+            where:{id_users:req.session.usuarioLogeado.id}
         })
+            .then(carrito =>{
+                // res.json(carrito)
+                res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito});
+            })
+            
+            
+        
+        // db.carrito.findAll({
+        //     include:['products'],
+        //     where:{id_users:req.session.usuarioLogeado.id},
+        //     order:[['id_products','ASC']]
+        // })
+        // .then((carritos) => {
+        //     let listado=[];
+        //     for(let i=0; i<carritos.length; i++){
+        //         let {products}=carritos[i];
+        //         listado.push(products)
+        //     }
+
+        //     res.render(path.join(__dirname,'../views/products/productCart.ejs'), {carrito:listado}); 
+        // })
 
     },        
 
@@ -136,21 +148,26 @@ let controladores = {
     },
 
     borrarCarrito: function(req,res) {
-        db.carrito.findOne({
-            where: [
-                        {id_users: req.session.usuarioLogeado.id},
-                        {id_products: req.params.id}
-                    ]
-        })
-        .then(carrito => {
-            console.log(carrito.id);
-            db.carrito.destroy ({
-                where: [
-                    {id:carrito.id}
-                ]
-            })
-        })
+
+    db.carrito.destroy ({where: [{id:req.params.id}]})
         .then(res.redirect('/product/cart'));
+
+
+        // db.carrito.findOne({
+        //     where: [
+        //                 {id_users: req.session.usuarioLogeado.id},
+        //                 {id_products: req.params.id}
+        //             ]
+        // })
+        // .then(carrito => {
+        //     console.log(carrito.id);
+        //     db.carrito.destroy ({
+        //         where: [
+        //             {id:carrito.id}
+        //         ]
+        //     })
+        // })
+        // .then(res.redirect('/product/cart'));
 
 
     },
@@ -163,11 +180,38 @@ let controladores = {
 
     agregarCarrito: function(req,res) {
 
-        db.carrito.create({
-            id_users: req.session.usuarioLogeado.id,
-            id_products: req.params.id
+        db.carrito.findOrCreate({
+            where:{
+                id_users: req.session.usuarioLogeado.id,
+                id_products: req.params.id,        
+            },
+            defaults:{
+                cantidad:1
+            }
         })
-        .then(res.redirect('/product/cart'));  
+            .then(function([carrito,created]) {
+                if(!created) {
+                    db.carrito.update({
+                        cantidad:carrito.cantidad+1
+                    },{
+                        where:{id:carrito.id}
+                    })
+                    .then(res.redirect('/product/cart'))
+                } else {
+                    res.redirect('/product/cart')
+                }
+            })
+            
+            
+
+
+
+        // db.carrito.create({
+        //     id_users: req.session.usuarioLogeado.id,
+        //     id_products: req.params.id,
+        //     cantidad: 1
+        // })
+        // .then(res.redirect('/product/cart'));  
 
     },
 
