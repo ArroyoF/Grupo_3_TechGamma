@@ -1,155 +1,152 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
-    background-color: #fbf5ee;
 }
 
 h2 {
     font-size: 14px;
 }
 
-.top-header{
+.top-header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    height: 45px;
+    height: 65px;
 }
 
-.burger-menu, .logo, .menu-nav {
+.burger-menu,
+.logo,
+.menu-nav {
     width: 15%;
 }
 
 .logo {
     width: 20%;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }
 
-.contenedor{
-    margin: auto;
-    margin-top: 20px;
+.contenedor {
     position: relative;
-    display: inline-block;
     text-align: center;
-    
+    animation: appearFromLeft 3s linear;
+
+}
+
+.main_img { 
+    position: relative;
+    left: 0;
+    bottom: 0;
+    animation: appear 3s linear, pump 3s linear infinite;
+    width: 100%;
 }
 
 .product_img {
     height: 60%;
-    max-width: 190px;
-    object-fit: cover;
-    padding: 3px;
 }
 
-.imagen_nombre{
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    
-}
-
-.contenedor img {
-    height: 100%;
-    max-width: 350px;
-    object-fit: cover;
+.slogan p {
+    color:#004b45;
+    font: bold 32px Arciform
 }
 
 .presentacion{
-    position: absolute;
-    top:60%;
     box-sizing: content-box;
-    width: 45%;
-    text-align: initial;
     margin: 10px;
-}
-
-
-.presentacion p {
-    font-size: 9px;
 }
 
 .logo img {
     width: 25px;
 }
 
+.shop {
+    animation: appear 3s linear;
+}
+
 .shop h3 {
     padding: 10px;
 }
 
-h3{
+h3 {
     font-size: 24px;
 }
 
-p{
+/*Sección del banner*/
+
+.hero_image {
+    background-image: url("images/hero2.png");
+}
+
+
+
+p {
     font-size: 12px;
 }
 
 .web {
     font-size: 16px;
-    color:#004b45
+    color: #004b45
 }
 
 .nombre {
-    width: 100%;
+    width: 80%;
     align-items: center;
-    display: flex;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
 }
 
-footer, 
-header{
-    background-color: #68a99a;
+footer,
+header {
+    background-color: #4fa581;
 }
 
 
-header nav{
+header nav {
     font-size: 12px;
 }
 
-footer ul li, 
-header ul li{
+footer ul li,
+header ul li {
     list-style-type: none;
 }
 
-footer ul li a, 
-header ul li a, header p{
+footer ul li a,
+header ul li a,
+header p {
     text-decoration: none;
     color: rgba(245, 245, 245, 0.773);
     transition: all 0.5s;
 }
 
-header ul li a:hover {
-    color: black;
-    font-size:20px;
-}
-
-.price{
+.price {
     font-size: 18px;
 }
 
 .discount,
-.description{
+.description {
     font-size: 16px;
     font-weight: normal;
 }
 
 h3,
-.description{
+.description {
     color: #666;
 }
 
-.description{
+.description {
     margin-top: 10px;
     text-align: center;
 }
@@ -159,43 +156,43 @@ h3,
     justify-content: center;
 }
 
-section.banner img{
+section.banner img {
     width: 80%;
     max-width: 800px;
 }
 
-main{
+main section{
     width: 90%;
     margin: 0 auto;
 }
 
-main section .products article{
-    background-color: #fff;    
+main section .products article {
+    background-color: #fff;
     margin: 30px 20px;
 }
 
-main section article img{
+main section article img {
     width: 100%;
 }
 
 main section .products article i,
-.discount{
+.discount {
     color: #004b45;
 }
 
-main section .products article i{
+main section .products article i {
     display: flex;
     font-size: 25px;
     padding: 5px;
     width: 30px;
     height: 30px;
     position: relative;
-    left:45%;
+    left: 45%;
     top: -15px;
 
 }
 
-main section h3{
+main section h3 {
     margin: 20px 0px;
 }
 
@@ -212,7 +209,7 @@ main section h3{
     flex-grow: 0.9;
 }
 
-article div.main-article{
+article div.main-article {
     width: 100%;
     border-top: 1px solid #ebebeb;
     padding: 15px;
@@ -226,295 +223,316 @@ article div.main-article{
 
 .products article {
     width: 90%;
+    border-radius: 20px;
+}
+
+.products article:hover {
+    width: 92%;
 }
 
 
-main section .products article{
-        box-shadow: 0px 0px 10px rgb(145, 134, 134);
-    }
- 
-    .description {
-        display: block;
-    }
+main section .products article {
+    box-shadow: 0px 0px 10px rgb(145, 134, 134);
+}
+
+.description {
+    display: block;
+}
 
 
 
 
 
-    .products{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }    
-    
+.products {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 
 
-    .menu-nav {
-        width: 30%;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-       }
-    
-    .menu-1 {
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        width: 60%;
-        align-items: center;
-    }
 
-    .menu-2 {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        align-items: center;
-    }
+.menu-nav {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+}
+.menu-2 {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+}
 
-    .menu-2 span {
-        display: none;
-    }
+.menu-2 span {
+    padding: 5px 0px;
+    font: normal 15px Roboto;
+    display: none;
+    transition: all 0.5s ease;
+}
 
-    .menu-2 li {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
+.menu-2 span:hover {
+    font: normal 18px Roboto;
+}
 
-    .menu-2 li a {
-        width: 100%;
-    }
+.menu-2 li {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
-    .menu-2 i {
-        font-size: 13px;
-        padding: 5px;
-        justify-content: center;
-        width: 22px;
-        height: 22px;
-        color: whitesmoke;
-        transition: all 0.5s;
-    }
+.menu-2 li a {
+    width: 100%;
+}
 
+.menu-2 i {
+    font-size: 13px;
+    padding: 5px;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: whitesmoke;
+    transition: all 0.5s;
+}
+.ingreso-datos {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 
-    /*.menu-2 i:hover {
-        transform: scale(1.5);
-        background-color: red;
-        color: #46914e;
-    }*/
+}
 
-    .ingreso-datos {
-        width: 70%;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        
-    }
+.ingreso-datos div {
+    width: 100%;
+    display: flex;
 
-    .ingreso-datos div {
-        width: 100%;
-        display: flex;
-        
-    }
+}
 
-    .ingreso-datos div input {
-        width: 100%;
-        padding: 5px;
-        margin: 5px auto;
-        max-width: 600px;
-
-        
-    }
-
-    div.botones {
-        margin: auto;
-        display: flex;
-        width: 80%;
-    }
-
-    .boton_enviar, .boton_reset {
-        transition: all 0.5s;
-        width: 20px;
-    }
-
-    .boton_enviar:hover {
-        background-color: #004b45;
-        color: white;
-
-    }
+.ingreso-datos div input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px auto;
+    max-width: 600px;
 
 
-    .boton_reset:hover {
-        background-color: red;
-        color: white;
-    }
+}
 
-    .articulos {
-        padding: 10px;
-    }
+div.botones {
+    margin: auto;
+    display: flex;
+    width: 80%;
+}
 
+.boton_enviar,
+.boton_reset {
+    transition: all 0.5s;
+    width: 20px;
+}
 
-    .comunidad {
-        background-color: #68a99a;
-        color: #004b45;
-        font-size: 36px;
-        font-style: normal;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        line-height: 500px;
-    }
+.boton_enviar:hover {
+    background-color: #004b45;
+    color: white;
 
-    .noticias {
-        margin: 10px;
-    }
-
-    .texto_web {
-        font-size: 13px;
-        font-style: normal;
-        padding: 20px;
-        display: none;
-    }
-
-    .texto_mobile {
-        font-size: 13px;
-        font-style: normal;
-        padding: 20px;
-    }
+}
 
 
-    footer {
-        display: flex;
-        justify-content: space-around;
-        position: fixed;
-        bottom: 0px;
-        width: 100%;
-    }
+.boton_reset:hover {
+    background-color: red;
+    color: white;
+}
 
-    footer p {
-        color:rgba(245, 245, 245, 0.773);
-        size: 15px;
-        margin: 10px;
-        font-size: 10px;
-    }
+.articulos {
+    width: 100%;
+    padding: 10px;
+    background: #68a99a;
+}
 
-    .menu-1 {
-        display: none;
-    }
+.articulos article {
+    width: 90%;
+    margin: auto;
+}
+
+.articulos article h3 {
+    color: #EDC967;
+}
+
+.comunidad {
+    color: #004b45;
+    font: bold 36px Roboto;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.label--comunidad {
+    color: #EDC967;
+    letter-spacing: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.noticias {
+    margin: 10px;
+}
+
+.texto_web {
+    color: black;
+    font-size: 13px;
+    font-style: normal;
+    padding: 20px;
+    display: none;
+}
+
+.texto_mobile {
+    font-size: 13px;
+    font-style: normal;
+    padding: 20px;
+}
 
 
-    .burger-menu{
-        text-align: center;
-    }
-    
-    .burger-menu i{
-        background-color: rgb(199, 130, 130);
-        border-radius: 2px;
-        width: 70%;
-        color: #FFF;
-        font-size: 10px;
-        height: 15px;
-        margin: auto;
-        padding: 5px;
-        width: 15px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
+footer {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;    
+    text-align: center;
+    height: 55px;
+    align-items: center;
+}
 
-    header p {
-        display: none;
-    }
+footer p {
+    color: rgba(245, 245, 245, 0.773);
+    margin: 10px;
+    font: normal 15px Roboto;
+    width: 200px;
+    transition: all 0.5s ease;
+}
 
-    main form {
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 90%;
-        margin: auto;
-    }
-    
-    main button {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 24px;
-    }
+footer p:hover {
+    font: normal 18px Roboto;
+}
 
-    .nombre-precio {
-        display: flex;
-        flex-direction: column;
-        font-size: 24px;
-    }
+.menu-1 {
+    display: none;
+}
 
-    .precio-planta {
-        display: flex;
-        font-size: 18px;
-    }
 
-    .imagen-carrito {
-        width: 50%;
-    }
-    
-    .cantidad {
-        display: flex;
-        width: 50%;
-    }
+.burger-menu {
+    text-align: center;
+}
 
-    .total {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.burger-menu i {
+    background-color: rgb(199, 130, 130);
+    border-radius: 2px;
+    width: 70%;
+    color: #FFF;
+    font-size: 10px;
+    height: 15px;
+    margin: auto;
+    padding: 5px;
+    width: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
-    .detalle-planta {
-        width: 50%;
-        margin: auto;
-    }
+header p {
+    display: none;
+}
 
-    .detalle-planta img {
-        width: 50%;
-    }
+main form {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
 
-    .carrito_img {
-        width: 50px;
-    }
+main button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 24px;
+}
 
-    .product-detail {
-        display: flex;
-        flex-direction: column;
-    }
+.nombre-precio {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
 
-    .detalle-planta {
-        width: 100%;
-    }
+.precio-planta {
+    display: flex;
+    font-size: 18px;
+}
 
-    .detalle-planta img {
-        width: 20%;
-        display: flex;
-    }
+.imagen-carrito {
+    width: 50%;
+}
 
-    .agregar-carrito,.editar-carrito, .eliminar-carrito{
-        transition: all 0.5s;
-        width: 200px;
-    }
+.cantidad {
+    display: flex;
+    width: 50%;
+}
 
-    .agregar-carrito:hover {  
-        background-color: #004b45;
-        color: white;   
-    }
+.total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .editar-carrito:hover {
-        background-color: #004b45;
-        color: white;
-    }
+.detalle-planta {
+    width: 50%;
+    margin: auto;
+}
 
-    .eliminar-carrito:hover {
-        background-color: red;
-        color: white;
-    }
+.detalle-planta img {
+    width: 50%;
+}
+
+.carrito_img {
+    width: 50px;
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle-planta {
+    width: 100%;
+}
+
+.detalle-planta img {
+    width: 20%;
+    display: flex;
+}
+
+.agregar-carrito,
+.editar-carrito,
+.eliminar-carrito {
+    transition: all 0.5s;
+    width: 200px;
+}
+
+.agregar-carrito:hover {
+    background-color: #004b45;
+    color: white;
+}
+
+.editar-carrito:hover {
+    background-color: #004b45;
+    color: white;
+}
+
+.eliminar-carrito:hover {
+    background-color: red;
+    color: white;
+}
 
 
 @media (min-width:470px) {
@@ -523,7 +541,7 @@ main section .products article{
         width: 40%;
         max-width: 200px;
     }
-    
+
 
     .menu-nav {
         width: 70%;
@@ -535,7 +553,7 @@ main section .products article{
 
 
     .menu-2 {
-        width: 30%;
+        width: 90%;
     }
 
     .burger-menu {
@@ -555,26 +573,30 @@ main section .products article{
 
 @media (min-width:750px) {
 
-    .contenedor img {
-        object-fit: fill;
-        max-width: 1200px;
-        width: 100%;
+    .articulos article {
+        width: 80%;
     }
 
-    .presentacion{
-        font-size: 14px;
-        width: 35%;
+    main section {
+        width: 80%;
     }
 
+    .main_img { 
+        width: 50%;
+    }
 
-    .presentacion p {
-        font-size: 17px;
+    .menu-nav {
+        width: 80%;
+    }
+    
+    .nombre {
+        display: flex;
     }
 
 
     .products article {
         width: 30%;
-        max-width: 200px;
+        max-width: 280px;
     }
 
     .menu-1 {
@@ -583,7 +605,7 @@ main section .products article{
 
 
     .menu-2 {
-        width: 50%;
+        width: 100%;
     }
 
     .menu-2 span {
@@ -600,33 +622,93 @@ main section .products article{
 
     .texto {
         width: 50%;
-        position: relative;
         display: inline-block;
         text-align: justify;
+        margin: auto;
     }
 
     .comunidad {
         width: 100%;
         max-height: 500px;
-        line-height: 300px;
     }
 
     .articulos img {
-        width: 50%;
-        object-fit: fill;
-        height: 500px;
+        width: 55%;
+        max-width: 650px;
+        padding: 50px;
     }
 
-    .texto_mobile{
+    .texto_mobile {
         display: none;
     }
 
     .texto_web {
-        display: inline;
-        position: absolute;
-        top: 250px;
+        display: block;
         width: 100%;
-        left: 10px;
+        font: normal 20px Roboto
     }
 
 }
+
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 10px;
+    }
+}
+
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes appearFromLeft {
+    0%{
+        left: -1000px;
+        opacity: 0;
+    }
+    40% {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+
+@keyframes appearFromRight {
+    0%{
+        right: -1000px;
+        opacity: 0;
+    }
+    40% {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes pump {
+    0% {
+      transform: scale(0.85);
+    }
+    5% {
+      transform: scale(1);
+    }
+    39% {
+      transform: scale(0.8);
+    }
+    45% {
+      transform: scale(0.9);
+    }
+    60% {
+      transform: scale(0.85);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
