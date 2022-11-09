@@ -11,15 +11,14 @@
             <div>
                 <% for (let i=0; i<carrito.length; i++) {  %>    
                     <div>                                    
-                        <img src="/images/<%= carrito[i].imagen %>" alt="planta1" class="carrito_img">
-                        <span class="name"><%= carrito[i].nombre %></span>
-                        <span class="discount"><%= carrito[i].descuento %></span>
-                        <span class="price"><%= carrito[i].precio %></span>
-                        <span>
-                            <form action="/product/cart/<%= carrito[i].id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="boton_carrito" value="X"></input>
-                            </form>
-                        </span>
+                        <img src="/images/<%= carrito[i].products.imagen %>" alt="planta1" class="carrito_img">
+                        <span class="price"> <%= carrito[i].cantidad %> unidad - </span>
+                        <span class="name"><%= carrito[i].products.nombre %></span>
+                        <span class="discount"><%= carrito[i].products.descuento %></span>
+                        <span class="price"><%= carrito[i].products.precio %></span>
+                        <form action="/product/cart/<%= carrito[i].id %>?_method=DELETE" method="POST">
+                            <input type="submit" class="boton_carrito" value="X"></input>
+                        </form>
                     </div>
                 <% }  %> 
             </div>
