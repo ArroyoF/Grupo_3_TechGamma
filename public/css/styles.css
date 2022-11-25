@@ -17,6 +17,13 @@ h2 {
     font-size: 14px;
 }
 
+.is-invalid {
+    background-color: red;
+}
+
+.is-valid {
+    background-color: greenyellow;
+}
 .top-header {
     display: flex;
     justify-content: space-between;

@@ -8,29 +8,31 @@
         <div class="titulo-ingreso-datos">
             <h2 > Registra los datos del nuevo producto:</h2>
         </div>
+
+        <ul class="errores"></ul>
             
         <form class="ingreso-datos" action="/product/create" enctype="multipart/form-data" method="POST">
-            <div><input type="text" name="nombre" placeholder="Nombre del producto" value="<%= locals.old && locals.old.nombre %>"></div> 
+            <div><input type="text" id="nombre" name="nombre" placeholder="Nombre del producto" value="<%= locals.old && locals.old.nombre %>"></div> 
             <% if (locals.errors && errors.nombre) { %>
                 <p><%=errors.nombre.msg%></p>
             <% } %> 
-            <div><input type="text" name="descuento" placeholder="Descuento" value="<%= locals.old && locals.old.descuento %>"></div>
+            <div><input type="text" id="descuento" name="descuento" placeholder="Descuento" value="<%= locals.old && locals.old.descuento %>"></div>
             <% if (locals.errors && errors.descuento) { %>
                 <p><%=errors.descuento.msg%></p>
             <% } %> 
-            <div><input type="text" name="categoria" placeholder="Categoria" value="<%= locals.old && locals.old.categoria %>"></div>
+            <div><input type="text" id="categoria" name="categoria" placeholder="Categoria" value="<%= locals.old && locals.old.categoria %>"></div>
             <% if (locals.errors && errors.categoria) { %>
                 <p><%=errors.categoria.msg%></p>
             <% } %> 
-            <div><input type="text" name="tamano" placeholder="Tamano" value="<%= locals.old && locals.old.tamano %>"></div> 
+            <div><input type="text" id="tamano" name="tamano" placeholder="Tamano" value="<%= locals.old && locals.old.tamano %>"></div> 
             <% if (locals.errors && errors.tamano) { %>
                 <p><%=errors.tamano.msg%></p>
             <% } %> 
-            <div><input type="file" name="imagen" placeholder="Imagen"></div>
+            <div><input type="file" id="imagen" name="imagen" placeholder="Imagen"></div>
             <% if (locals.old && !old.file) { %>
                 <p>Debe subir un archivo</p>
             <% } %> 
-            <div><input type="text" name="precio" placeholder="Precio" value="<%= locals.old && locals.old.precio %>"></div> 
+            <div><input type="text" id="precio" name="precio" placeholder="Precio" value="<%= locals.old && locals.old.precio %>"></div> 
             <% if (locals.errors && errors.precio) { %>
                 <p><%=errors.precio.msg%></p>
             <% } %> 
@@ -53,6 +55,7 @@
         </main>
 
         <%- include('../partials/footer.ejs') %>
+        <script src="/js/productAddValidator.js"></script>
         
     </body>
 </html>

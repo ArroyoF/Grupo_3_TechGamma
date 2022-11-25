@@ -10,23 +10,33 @@
             <h2 > Registra los datos del nuevo producto:</h2>
             <br>
         </div>
+
+        <ul class="errores"></ul>
             
         <form class="ingreso-datos" action="/product/edit/<%= planta.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
             <div>
                 <label nombre> Nombre </label>
-                <input type="text" name="nombre" value="<%= planta.nombre %>">
+                <input type="text" id="nombre" name="nombre" value="<%= planta.nombre %>">
             </div> 
             <div>
                 <label descuento> Descuento </label>
-                <input type="text" name="descuento" value="<%= planta.descuento %>">
+                <input type="text" id="descuento" name="descuento" value="<%= planta.descuento %>">
+            </div> 
+            <div>
+                <label descuento> Categoria </label>
+                <input type="text" id="categoria" name="categoria" value="<%= planta.categoria %>">
+            </div> 
+            <div>
+                <label descuento> Tamaño </label>
+                <input type="text" id="tamano" name="tamano" value="<%= planta.tamano %>">
             </div> 
             <div>
                 <label imagen> Imagen </label>
-                <input type="file" name="imagen" value="<%= planta.imagen %>">
+                <input type="file" id="imagen" name="imagen" value="<%= planta.imagen %>">
             </div>
             <div>
                 <label precio> Precio </label>
-                <input type="text" name="precio" value="<%= planta.precio %>">
+                <input type="text" id="precio" name="precio" value="<%= planta.precio %>">
             </div> 
             <div class="botones">
                 <div>
@@ -39,6 +49,6 @@
         </main>
 
         <%- include('../partials/footer.ejs') %>
-        
+        <script src="/js/productAddValidator.js"></script>
     </body>
 </html>

@@ -8,29 +8,32 @@
         <div class="titulo-ingreso-datos">
             <h2 > Registra tus datos:</h2>
         </div>
+
+        <ul class="errores"></ul>
+
         <form class="ingreso-datos" action="/user/register" enctype="multipart/form-data" method="POST">
             
-            <div><input type="text" name="nombre" placeholder="Nombre" value="<%= locals.old && locals.old.nombre %>"></div> 
+            <div><input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<%= locals.old && locals.old.nombre %>"></div> 
                 <% if (locals.errors && errors.nombre) { %>
                     <p><%=errors.nombre.msg%></p>
                 <% } %> 
-            <div><input type="text" name="apellido" placeholder="Apellido" value="<%= locals.old && locals.old.apellido %>"></div> 
+            <div><input type="text" id="apellido" name="apellido" placeholder="Apellido" value="<%= locals.old && locals.old.apellido %>"></div> 
                 <% if (locals.errors && errors.apellido) { %>
                     <p><%=errors.apellido.msg%></p>
                 <% } %> 
-            <div><input type="text" name="categoria" placeholder="Admin/User" value="<%= locals.old && locals.old.categoria %>"></div> 
+            <div><input type="text" id="categoria" name="categoria" placeholder="Admin/User" value="<%= locals.old && locals.old.categoria %>"></div> 
                 <% if (locals.errors && errors.categoria) { %>
                     <p><%=errors.categoria.msg%></p>
                 <% } %> 
-            <div><input type="email" name="email" placeholder="Correo" value="<%= locals.old && locals.old.email %>"></div> 
+            <div><input type="email" id="email" name="email" placeholder="Correo" value="<%= locals.old && locals.old.email %>"></div> 
                 <% if (locals.errors && errors.email) { %>
                     <p><%=errors.email.msg%></p>
                 <% } %> 
-            <div><input type="password" name="password" placeholder="Contraseña"></div> 
+            <div><input type="password" id="password" name="password" placeholder="Contraseña"></div> 
                 <% if (locals.errors && errors.password) { %>
                     <p><%=errors.password.msg%></p>
                 <% } %> 
-            <div><input type="file" name="imagen" placeholder="Imagen"></div>
+            <div><input type="file" id="imagen" name="imagen" placeholder="Imagen"></div>
             <% if (locals.old && !old.file) { %>
                 <p>Debe subir un archivo</p>
             <% } %> 
@@ -50,6 +53,7 @@
         </main>
 
         <%- include('../partials/footer.ejs') %>
+        <script src="/js/userAddValidator.js"></script>
         
     </body>
 </html>
