@@ -4,13 +4,14 @@ window.onload = function(){
     form.nombre.focus();
 
     let nombre = document.querySelector("#nombre");
+    let apellido = document.querySelector("#apellido");
     let password = document.querySelector("#password");
-
     
-    password.addEventListener("input", (e) => {
+    
+    password.addEventListener("blur", (e) => {
         console.log("aqui")
         let errores = [];
-        if(password.value.length<5){
+        if(password.value.length<3){
             errores.push("Password demasiado corto");
             password.classList.add("is-invalid");
             password.classList.remove("is-valid");
@@ -32,7 +33,7 @@ window.onload = function(){
 
     nombre.addEventListener("blur", (e) => {
         let errores = [];
-        if(nombre.value.length<5){
+        if(nombre.value.length<2){
             errores.push("Nombre demasiado corto");
             nombre.classList.add("is-invalid");
             nombre.classList.remove("is-valid");
@@ -52,6 +53,29 @@ window.onload = function(){
         }
     })
 
+    apellido.addEventListener("blur", (e) => {
+        let errores = [];
+        if(apellido.value.length<2){
+            errores.push("Apellido demasiado corto");
+            apellido.classList.add("is-invalid");
+            apellido.classList.remove("is-valid");
+        }else{
+            apellido.classList.add("is-valid");
+            apellido.classList.remove("is-invalid");
+        }
+        if(errores.length > 0){
+            let ulError = document.querySelector(".errores");
+            ulError.innerHTML = "";
+            for (let i = 0; i < errores.length; i++) {
+                ulError.innerHTML += "<li>" + errores[i] + "</li>"   
+            }
+        } else {
+            let ulError = document.querySelector(".errores");
+            ulError.innerHTML = "";
+        }
+    })
+
+
 
     form.addEventListener("submit", (evento) => {
         let errores = [];
@@ -62,16 +86,16 @@ window.onload = function(){
         let password = document.querySelector("#password");
         let imagen = document.querySelector("#imagen");
         
-        if(nombre.value == ""){
-            errores.push("Nombre no puede estar vacio");
+        if(nombre.value.length <2){
+            errores.push("Nombre demasiado corto");
             nombre.classList.add("is-invalid");
             nombre.classList.remove("is-valid");
         }else{
             nombre.classList.add("is-valid");
             nombre.classList.remove("is-invalid");
         }
-        if(apellido.value == ""){
-            errores.push("Apellido no puede estar vacio");
+        if(apellido.value.length <2){
+            errores.push("Apellido demasiado corto");
             apellido.classList.add("is-invalid");
             apellido.classList.remove("is-valid");
         }else{
@@ -94,8 +118,8 @@ window.onload = function(){
             email.classList.add("is-valid");
             email.classList.remove("is-invalid")
         }
-        if(password.value == ""){
-            errores.push("Password no puede estar vacio");
+        if(password.value.length <3 ){
+            errores.push("Password demasiado corto");
             password.classList.add("is-invalid");
             password.classList.remove("is-valid");
         }else{
