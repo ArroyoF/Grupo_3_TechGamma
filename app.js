@@ -15,7 +15,7 @@ const apiRutasProductos = require('./src/routes/api/rutasProductos.js');
 const apiRutasUsuarios = require('./src/routes/api/rutasUsuarios.js');
 
 
-var puerto=3030;
+var puerto=3040;
 
 app.set('view engine', 'ejs');                      //inicializa ejs
 app.set('views', path.join(__dirname, './src/views'))

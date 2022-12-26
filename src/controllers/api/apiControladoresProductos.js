@@ -9,10 +9,10 @@ const apiControladoresProductos = {
                 let response = {
                     meta: {
                         status: 200,
-                        total: products.length,
+                        count: products.length,
                         url: 'api/products'
                     },
-                    data: products
+                    products: products
                 }
                 res.json(response);
             }
