@@ -10,6 +10,7 @@ const apiControladoresProductos = {
                     meta: {
                         status: 200,
                         count: products.length,
+                        categories: 2,
                         url: 'api/products'
                     },
                     products: products
