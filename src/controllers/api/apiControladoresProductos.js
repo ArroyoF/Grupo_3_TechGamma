@@ -2,23 +2,31 @@ const db = require('../../../database/models');
 const sequelize = db.sequelize;
 
 const apiControladoresProductos = {
+
     list: (req, res) => {
+
+        let cant_categ;
+
+        db.products.findAll({group:['categoria']})
+            .then((categ)=>{cant_categ=(categ.length)})
+        
         db.products.findAll()
-        .then(
-            products => {
-                let response = {
-                    meta: {
-                        status: 200,
-                        count: products.length,
-                        categories: 2,
-                        url: 'api/products'
-                    },
-                    products: products
-                }
-                res.json(response);
-            }
-        )
-        .catch( error => res.send(error))
+                .then(
+                    products => {
+                        let response = {
+                            meta: {
+                                status: 200,
+                                count: products.length,
+                                categories: cant_categ,
+                                url: 'api/products'
+                            },
+                            products: products
+                        }
+                        res.json(response);
+                    }
+                )
+                .catch( error => res.send(error))
+                
     },
 
     detail: (req, res) => {
