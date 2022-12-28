@@ -5,27 +5,23 @@ const apiControladoresProductos = {
 
     list: (req, res) => {
 
-        let cant_categ;
+        let p0 = db.products.findAll({group:['categoria']})
+        let p1 = db.products.findAll()
 
-        db.products.findAll({group:['categoria']})
-            .then((categ)=>{cant_categ=(categ.length)})
-        
-        db.products.findAll()
-                .then(
-                    products => {
-                        let response = {
-                            meta: {
-                                status: 200,
-                                count: products.length,
-                                categories: cant_categ,
-                                url: 'api/products'
-                            },
-                            products: products
-                        }
-                        res.json(response);
-                    }
-                )
-                .catch( error => res.send(error))
+        Promise.all([p0,p1])
+            .then(respuestas=>{
+                let response = {
+                    meta: {
+                        status: 200,
+                        count: respuestas[1].length,
+                        categories: respuestas[0].length,
+                        url: 'api/products'
+                    },
+                    products: respuestas[1]
+                }
+                res.json(response);
+            })
+            .catch( error => res.send(error))
                 
     },
 
