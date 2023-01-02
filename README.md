@@ -23,6 +23,8 @@ Integrantes del equipo:
 
 - Luis Tek: ingeniero electrónico, 43 años, provincia de Tucumán.
 
+- Jessica Daniela: Psicóloga, 25 años, Colombia, Bucaramanga. 
+
 LINKS DE TRABAJO:
 TRELLO: https://trello.com/b/HU6iVnvk/proyecto-integrador-eq3
 FIGMA: https://www.figma.com/team_invite/redeem/CWEUKwjQIbSkGZ4ThefCdS
