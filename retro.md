@@ -31,3 +31,21 @@ Less of:
 
 Stop doing:
 -
+
+Sprint 8=
+Start doing: 
+- 
+
+More of:
+- Utilizar whatsapp como comunicacion interna.
+- Implementacion del diagrama de base de datos.
+
+Keep doing:
+- Utilizar Trello para la organizacion del proyecto.
+- Utilizar las herramientas brindadas en la clase teorica
+
+Less of:
+- 
+
+Stop doing:
+-

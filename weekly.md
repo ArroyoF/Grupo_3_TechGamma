@@ -32,3 +32,9 @@ agregar tamaño en productos - listo
 modifica login, register, productdetail, carrito
 esta logueado con error "tenes que estar logueado" - listo
 agregar express validator en crear productos - listo
+
+2/1
+completar retro - listo
+crear y agregar wireframe de Base de datos - listo
+Validacion de login (backend) - listo
+Validacion de login (frontend) - listo

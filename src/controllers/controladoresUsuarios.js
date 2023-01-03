@@ -74,32 +74,36 @@ let controladores = {
 
 
     entrar: function(req,res) {
+        let errors=validationResult(req);
 
-        db.users.findOne({
-            where:{email:req.body.email}
-        })
-        .then((usuarioEncontrado) => {
-            if((usuarioEncontrado!=null)&&(bcrypt.compareSync(req.body.password,usuarioEncontrado.password)))
-                {
-                    req.session.usuarioLogeado = {
-                        id: usuarioEncontrado.id,
-                        nombre: usuarioEncontrado.nombre,
-                        categoria: usuarioEncontrado.categoria
+        if (errors.isEmpty()) {
+
+            db.users.findOne({
+                where:{email:req.body.email}
+            })
+            .then((usuarioEncontrado) => {
+                if((usuarioEncontrado!=null)&&(bcrypt.compareSync(req.body.password,usuarioEncontrado.password)))
+                    {
+                        req.session.usuarioLogeado = {
+                            id: usuarioEncontrado.id,
+                            nombre: usuarioEncontrado.nombre,
+                            categoria: usuarioEncontrado.categoria
+                        }
+                
+                        if(req.body.recordar) {
+                            res.cookie("recuerdame", usuarioEncontrado.id, {maxAge:5*60*1000});   // cookie por 5 minutos
+                        }
+                
+                        res.redirect('/');
+
+                    }else{
+                        res.render(path.join(__dirname,'../views/users/login.ejs'), {errorIngreso: "Credenciales incorrectas"});
                     }
-            
-                    if(req.body.recordar) {
-                        res.cookie("recuerdame", usuarioEncontrado.id, {maxAge:5*60*1000});   // cookie por 5 minutos
-                    }
-            
-                    res.redirect('/');
-
-                }else{
-                    res.render(path.join(__dirname,'../views/users/login.ejs'), {errorIngreso: "Credenciales incorrectas"});
-                }
-        })
-    },
-
-
+            })
+        } else {
+            res.render(path.join(__dirname,'../views/users/login.ejs'), {errors:errors.mapped(), old:req.body});
+        }
+    }
 };
  
 module.exports = controladores;

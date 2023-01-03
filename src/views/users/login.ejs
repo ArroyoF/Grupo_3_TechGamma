@@ -11,6 +11,8 @@
             <div class="titulo-ingreso-datos">
                 <h2 > Ingresa tus datos:</h2>
             </div>
+
+            <ul class="errores"></ul>
                 
             <form class="ingreso-datos" action="/user/login" method="POST">
                 <% if(locals.errorLogeo) { %>
@@ -19,8 +21,14 @@
                 <% if(locals.errorIngreso) { %>
                     <div> <%= errorIngreso %></div>
                 <% } %>
-                <div><input type="email" name="email" placeholder="Correo"></div> 
-                <div><input type="password" name="password" placeholder="Contraseña"></div> 
+                <div><input type="text" id="email" name="email" placeholder="Correo"></div> 
+                <% if (locals.errors && errors.email) { %>
+                    <p><%=errors.email.msg%></p>
+                <% } %> 
+                <div><input type="password" id="password" name="password" placeholder="Contraseña"></div> 
+                <% if (locals.errors && errors.password) { %>
+                    <p><%=errors.password.msg%></p>
+                <% } %> 
  
                 <div>
                     <input type="checkbox" name="recordar" id="recordar">
@@ -43,6 +51,6 @@
         </main>
 
         <%- include('../partials/footer.ejs') %>
-        
+        <script src="/js/userLoginValidator.js"></script>
     </body>
 </html>

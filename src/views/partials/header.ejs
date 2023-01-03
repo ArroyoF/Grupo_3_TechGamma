@@ -9,6 +9,9 @@
         <nav class="menu-nav">
             <ul class="menu-2">
                 <% if (locals.usuario) { %>
+                    <li><a href="/product/list/plantas"><span>Plantas</span></a></li>
+                    <li><a href="/product/list/macetas"><span>Macetas</span></a></li>
+                    <li><a href="/product/list"><span>Productos</span></a></li>
                     <p><%=locals.usuario.nombre   %></p>
                     <li><a href="/user/logout">  <span>  </span> <i class="fas fa-sign-out-alt"></i>  </a></li>
                     <li><a href="/user/list"> <span> Usuarios </span> <i class="fas fa-list"></i></a></li>

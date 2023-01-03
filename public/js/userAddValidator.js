@@ -133,9 +133,6 @@ window.onload = function(){
             for (let i = 0; i < errores.length; i++) {
                 ulError.innerHTML += "<li>" + errores[i] + "</li>"   
             }
-        }else{
-
         }
-        
     })
 }
