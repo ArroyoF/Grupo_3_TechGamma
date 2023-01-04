@@ -521,14 +521,16 @@ main button {
 .detalle-planta {
     width: 50%;
     margin: auto;
+    padding: 20px;
 }
 
 .detalle-planta img {
     width: 50%;
+    height: 60%;
 }
 
 .carrito_img {
-    width: 50px;
+    width: 100px;
 }
 
 .product-detail {
@@ -541,7 +543,6 @@ main button {
 }
 
 .detalle-planta img {
-    width: 20%;
     display: flex;
 }
 
@@ -563,7 +564,7 @@ main button {
 }
 
 .eliminar-carrito:hover {
-    background-color: red;
+    background-color: #004b45;
     color: white;
 }
 
@@ -593,7 +594,7 @@ main button {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    
+    padding: 20px;
 }
 
 .ingreso-datos div {
@@ -605,7 +606,7 @@ main button {
 .ingreso-datos div input {
     width: 100%;
     padding: 5px;
-    margin: 5px auto;
+    margin: 5px;
     max-width: 600px;   
     border-radius: 10px;
 }
@@ -697,9 +698,11 @@ main button {
     }
 
     .boton_carrito {
+        color:#ebebeb;
         display: inline;
-        background-color: red;
+        background-color: #004b45;
         width: 25px;
+        height: 25px;
         border-radius: 100%;
     }
 

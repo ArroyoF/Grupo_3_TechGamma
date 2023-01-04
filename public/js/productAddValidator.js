@@ -5,6 +5,7 @@ window.onload = function(){
 
     let nombre = document.querySelector("#nombre");
 
+    /*
     nombre.addEventListener("blur", (e) => {
         let errores = [];
         if(nombre.value.length<5){
@@ -26,6 +27,7 @@ window.onload = function(){
             ulError.innerHTML = "";
         }
     })
+    */
 
 
     form.addEventListener("submit", (evento) => {
