@@ -8,7 +8,7 @@ window.onload = function(){
     let password = document.querySelector("#password");
     
     
-    password.addEventListener("blur", (e) => {
+/*    password.addEventListener("blur", (e) => {
         console.log("aqui")
         let errores = [];
         if(password.value.length<3){
@@ -74,7 +74,7 @@ window.onload = function(){
             ulError.innerHTML = "";
         }
     })
-
+*/
 
 
     form.addEventListener("submit", (evento) => {
